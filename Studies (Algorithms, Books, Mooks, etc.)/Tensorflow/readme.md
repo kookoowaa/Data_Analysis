@@ -1,2 +1,2 @@
-https://developers.google.com/machine-learning/recommendation/
+구글 강의 주소: https://developers.google.com/machine-learning/recommendation/
 
