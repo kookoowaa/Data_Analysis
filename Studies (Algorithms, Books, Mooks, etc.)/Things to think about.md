@@ -16,9 +16,10 @@
 
 - 
 
-# 5. 통계 검정이란?
+# 5. 통계적 가설 검정이란?
 
-- p-value 관점에서
+- p-value 관점에서 (https://ssacstat.com/default/cs/cs_05.php?com_board_basic=read_form&com_board_idx=421&topmenu=5&left=5&com_board_search_code=&com_board_search_value1=&com_board_search_value2=&com_board_page=7)
+- 
 
 # 6. Logistic function을 쓰는 이유는?
 
