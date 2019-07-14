@@ -33,12 +33,17 @@
 
 # 5. 통계적 가설 검정이란?
 
-- p-value 관점에서 (https://ssacstat.com/default/cs/cs_05.php?com_board_basic=read_form&com_board_idx=421&topmenu=5&left=5&com_board_search_code=&com_board_search_value1=&com_board_search_value2=&com_board_page=7)
-- 
+- 기존의 알려진 `H0`에 반하는 입증하고자 하는 가설 `h1`을  유의확률 `p-value`로  평가하여 새로운 가설의 채택여부 검증
+- 여기서 유의확률 `p-value`는 `h1`을 채택했을 때의 오류 즉 `유의수준`이며 통상적으로 실혐 결과에서 유의확률 `p-value`이 5% 이하일 경우`h1` 채택
+- 다만 현재 빅데이터 시대에서 문제는 샘플 수가 늘어나며 유의확률 `p-value` 5% 이하에 들어가는 검정통계량이 늘어남 (다 유의하다고 나옴)
+- https://ssacstat.com/default/cs/cs_05.php?com_board_basic=read_form&com_board_idx=421&topmenu=5&left=5&com_board_search_code=&com_board_search_value1=&com_board_search_value2=&com_board_page=7
+- https://nittaku.tistory.com/448
 
-# 6. Logistic function을 쓰는 이유는?
+# 6. Classification에서 Logistic Regression(Sigmoid Function)을 쓰는 이유는?
 
-- Threshold 설정
+- 예외적인 데이터세트(아웃라이어)가 있는 경우, 선형 회귀는 모델을 잘 표현하기 어렵고,  정상적인 데이터를 잘못 분류하게 될 가능성이 다분함 (threshold)
+- 또한, classification에서 0-1 범위 밖을 넘어나는 가설을 얻기 위함이기도 함
+- https://38402160.tistory.com/38?category=617404 참조
 
 
 
