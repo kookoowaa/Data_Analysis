@@ -23,11 +23,11 @@
 - 앙상블은 **동일한** 학습 알고리즘을 사용해서, weak learner를 결합해 strong learner를 만들어 내는 방법으로, **서로 다른** 학습알고리즘을 사용하는 유사한 개념으로는 Stacking이 있음
 - 대표적인 앙상블 기법으로는 **Bagging**과 **Boosting**이 있음
 - Bagging은 **Bootstrap Aggregating**을 의미하며 복원 랜덤 샘플링을 통해 표본집단으로 동일한 모델을 학습시키고, 예측변수들을 집계하여 모델을 생성 (대표적인 모델이 Random Forest)
-- 그렇게 하는 이유는 샘플에서 나타난 결과를 일종의 _중간값_으로 맞추기 때문에 overfitting을 피할 수 있으며,  CART 모델의 단점인 discrete 한 boundary를 유연하게 가져갈 수 있음 (Categorical data는 투표로, Continuous data는 평균으로)
+- 그렇게 하는 이유는 샘플에서 나타난 결과를 일종의 *중간값*으로 맞추기 때문에 overfitting을 피할 수 있으며,  CART 모델의 단점인 discrete 한 boundary를 유연하게 가져갈 수 있음 (Categorical data는 투표로, Continuous data는 평균으로)
 
 ![](https://swalloow.github.io/assets/images/agg_result.png)
 
-- **Boosting**은 일반 적인 모델을 만드는데 목적이 있는 bassing과는 다르게, 맞추기 어려운 문제를 맞추는 데 초점을 둠
+- **Boosting**은 일반 적인 모델을 만드는데 목적이 있는 bagging과는 다르게, 맞추기 어려운 문제를 맞추는 데 초점을 둠
 - 예를 들어, 수학문제 9번이 어려워 반복적으로 틀리는 경우라면, **Boosting**은 9번 문제에 가중치를 부여, 9번 문제를 잘 맞춘 모델을 최종 모델로 선정함
 - Boosting도 동일하게 복원 랜덤 샘플링을 하지만, 순차적으로 틀린 문제에 가중치를 부여해가며 학습이 진행되고, 학습이 끝나면 결과에 따라 가중치가 재분배되는 만큼 정확도가 높게 나타남
 
