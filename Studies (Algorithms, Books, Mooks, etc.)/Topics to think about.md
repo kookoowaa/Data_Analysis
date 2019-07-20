@@ -47,4 +47,24 @@
 
 ## 7. AB 테스트 후 결과 검증 방법
 
+- AB 테스트는 주로 빈도주의 관점에서 유의성 검정을 따름
+
+- 보통 실험 결과는 **"테스트 결과 A와 B가 별 차이가 없다"**는 귀무 가설<sup>H_0: Null Hypothesis</sup>을 기각할만한 차이가 **"테스트 결과 A와 B 간에 있는지"**  p-value를 통해 대립가설<sup>$H_1$: Alternative Hypothesis</sup>을 검정
+  $$
+  H_0: d = p_A - p_B = 0\\
+  H_1: d>0
+  $$
+
+- 따라서 기준 분포 pdf는 $d=0$에 해당하는 확률 분포를 따르며, 앞의 확률분포에서 critical value(5%, 1%...)보다 작은 경우 의미있는 테스트였다고 인식할 수 있음
+
+  ![](https://boxnwhis.kr/img/posts/2016-04-15-dont_be_overwhelmed_by_pvalue/null_hypothesis_case1.png)
+
+- 반대로, p-value가 critical value 보다 큰 경우(아래) 두 종류의 접근이 가능
+
+  ![](https://boxnwhis.kr/img/posts/2016-04-15-dont_be_overwhelmed_by_pvalue/null_hypothesis_case2.png)
+
+- 하나는 대립가설을 포기하고 귀무가설을 따르는 것이고, 다른 하나는 실험 기간을 연장하여 샘플링 수를 늘려 통계적으로 유의미한 결과가 나오기를 기대하는 것
+
+- 이론적으로는 검정력과 유의 수준 및 탐지하고자 원하는 효과 크기도 사전에 감안하여 실험 규모를 결정해야 하지만, 실제 실무에서 행하기는 쉽지 않음
+
 - https://boxnwhis.kr/2016/04/15/dont_be_overwhelmed_by_pvalue.html
