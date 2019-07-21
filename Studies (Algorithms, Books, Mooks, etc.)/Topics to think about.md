@@ -68,3 +68,7 @@
 - 이론적으로는 검정력과 유의 수준 및 탐지하고자 원하는 효과 크기도 사전에 감안하여 실험 규모를 결정해야 하지만, 실제 실무에서 행하기는 쉽지 않음
 
 - https://boxnwhis.kr/2016/04/15/dont_be_overwhelmed_by_pvalue.html
+
+## 8. AB테스트에서의 p-value 계산
+
+- p-value
