@@ -128,3 +128,33 @@
 - 마지막으로 $P(D)$는 경계확률을 의미 (**추가 리서치 필요**)
 
 - 참조: bayesian 활용 A/B 테스트 사례 https://blog.exploratory.io/an-introduction-to-bayesian-a-b-testing-in-exploratory-cb5a7ad80963
+
+## 10. Market Baskey Analysis의 의미
+
+- Market Basket Analysis는 비지도학습의 한 종류로, Y 값에 대한 label이 없는 상태에서 데이터 간의 상관성을 바탕으로 숨겨진 패턴을 찾는 분석기법임
+
+- 이 때 유의미한, 또는 상관성이 높은 집합을 찾는 것이 목적
+
+- 일일히 육안으로 보고 평가하기 힘들기 때문에 평가 척도를 가지고 필터링을 진행
+
+- 통상적으로 평가 척도는 지지도(Support), 신뢰도(Confidence), 향상도(Lift)를 보며, 각 척도에 임계값을 주어 임계값 이상의 조합만 유의미하게 평가
+
+- **Support**는 전체에서 테스트 집합을 포함하는 거래 비중을 의미하며, 빈도를 측정하는 개념으로 이해 가능
+  $$
+  P(A\cap B)
+  $$
+  
+
+- **Confidence**는 A와 B 집합의 관계에서 A(B)가 구매된 거래 중  두 제품의 동시 구매 비중을 의미하며, 의존도가 얼마나 높은지 판단할 수 있음
+  $$
+  \frac{P(A\cap B)}{P(A)}
+  $$
+
+- **Lift**는 A의 Confidence와 B의 단독 구매 비중을 비교하여, 특정 조합이 단독 구매 시보다 얼마나 효율이 높은지를 측정 (1 이상일 때)
+
+  
+  $$
+  \frac{\frac{P(A\cap B)}{P(A)}}{P(B)}
+  $$
+  
+
