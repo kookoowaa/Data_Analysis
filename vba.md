@@ -1,6 +1,5 @@
-# VBA for Excel
+# Fundamental VBA for Excel
 
-## 1. VBA
 ### 가. 기본 구조
 - BASIC<sup>Beginner's All purpose Symbolic Instruction Code</sup>에서 출발, **V**isual **B**asic for **A**pplication으로 발전
 - VBA는 객체지향형 언어임
@@ -94,11 +93,37 @@
 	|왼쪽 끝|End(xlToLeft)|<Ctrl> + ←|
 	|오른쪽 끝|End(xlToRight)|<Ctrl> + →|
 
-### 라.	프로시져 종류
+### 라. 프로시져 종류
 - VBA for Excel의 프로시져는 크게 `Sub` 프로시져와 `Function` 프로시져로 구분
 - Sub 프로시져는 상대적으로 제약이 적고 다양한 방법으로 프로시져를 실행 가능 
 - Function 프로시져는 사용자 함수 느낌으로, 1) 다른 프로시져에서 지정된 function을 호출하거나, 2) 시트 내에서 함수 사용하듯이 호출하는 방법으로만 실행이 가능
 - Function을 만드는데 있어서, 파라미터가 없거나, 기본 값과 함께 선택적으로 변경하거나, 개수 제약이 없는 등 다양하게 파라미터를 활용 가능	
 
 
+### 마. (기타) 디버깅
+ - 디버깅에 대처하는 가장 실용적인 방법은 (전체 프로시져에 큰 문제가 없을 시), Error에 대한 exception을 설정하는 것으로 제일 처음 변수 정의 시 `On Error GoTo <레이블>`, `On Error Resume Next` 같이 Error를 무시하도록 하는 방법이 있음
+ ```
+ Sub MyCalc4()
+    Dim x As Integer
+    Dim y As Variant
+    Dim strMsg As String
+    On Error GoTo ErrorTrap
+
+    x = 100
+    y = InputBox("숫자를 입력하세요")
+
+    MsgBox "결과값은 " & x / y & "입니다"
+
+ErrorTrap:
+    If Err.Number <> 0 Then
+        strMsg = "오류가 발생하였습니다. " & vbCrLf
+        strMsg = strMsg & "반드시 0이 아닌 숫자값을 입력하세요!"
+        MsgBox strMsg, , "아이엑셀러 닷컴"
+    End If
+End Sub
+ ```
+ - 위의 경우, 중간에서 문자나 0 같은 값이 대입되었을 때, `ErrorTrap`레이블로 넘어가서 실행하도록 함
+ - 다른 방법 중 하나로 단계별로 코드를 실행하며, 디버딩 하는 방법이 있음 (마치 Jupyter Notebook 처럼)
+ - 프로시져 내부에 포인터를 가져다 둔 상태로 \<F8\>을 누르면서 한줄 씩 프로씨져가 실행되며, 마우스를 가져가면 현재 변수에 할당 된 값도 파악할 수 있음 (locals 창을 활용하면 상시 변수값을 확인 가능 \<view\>-\<locals window\>)
+ 
 *ref. http://iexceller.com
