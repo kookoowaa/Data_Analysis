@@ -88,10 +88,10 @@
 
 	|이동 방향|인 수|단축 키|
 	|---|---|---|
-	|위쪽 끝|End(xlUp)|<Ctrl> + ↑|
-	|아래쪽 끝|End(xlDown)|<Ctrl> + ↓|
-	|왼쪽 끝|End(xlToLeft)|<Ctrl> + ←|
-	|오른쪽 끝|End(xlToRight)|<Ctrl> + →|
+	|위쪽 끝|End(xlUp)|\<Ctrl\> + ↑|
+	|아래쪽 끝|End(xlDown)|\<Ctrl\> + ↓|
+	|왼쪽 끝|End(xlToLeft)|\<Ctrl\> + ←|
+	|오른쪽 끝|End(xlToRight)|\<Ctrl\> + →|
 
 ### 라. 프로시져 종류
 - VBA for Excel의 프로시져는 크게 `Sub` 프로시져와 `Function` 프로시져로 구분
