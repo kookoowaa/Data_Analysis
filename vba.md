@@ -93,7 +93,12 @@
 	|아래쪽 끝|End(xlDown)|<Ctrl> + ↓|
 	|왼쪽 끝|End(xlToLeft)|<Ctrl> + ←|
 	|오른쪽 끝|End(xlToRight)|<Ctrl> + →|
-	
+
+### 라.	프로시져 종류
+- VBA for Excel의 프로시져는 크게 `Sub` 프로시져와 `Function` 프로시져로 구분
+- Sub 프로시져는 상대적으로 제약이 적고 다양한 방법으로 프로시져를 실행 가능 
+- Function 프로시져는 사용자 함수 느낌으로, 1) 다른 프로시져에서 지정된 function을 호출하거나, 2) 시트 내에서 함수 사용하듯이 호출하는 방법으로만 실행이 가능
+- Function을 만드는데 있어서, 파라미터가 없거나, 기본 값과 함께 선택적으로 변경하거나, 개수 제약이 없는 등 다양하게 파라미터를 활용 가능	
 
 
 *ref. http://iexceller.com
