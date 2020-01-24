@@ -129,7 +129,12 @@ End Sub
 ### 바. 함수 사용법
  - VBA도 함수 별로 사용 형식이 있으며, document가 되어 있음
  - 함수 사용 시 파라미터에 접근하는 방법은, 1) 파라미터와 동일한 순서대로 입력값을 기입하거나, 2) 파라미터 이름표와 값을 매칭하여 입력할 수도 있음
- - Document에 따르면 MsgBox의 사용 형식은 `MsgBox(prompt [. Buttons] [, Title] [, Helpfile, Context])`이며, `MsgBox "안녕하세요", vbYesNo`와 `MsgBox Buttons:=vbYesNo, prompt:="박찬우"`와 동일하게 작동함
- - 
+ - Document에 따르면 MsgBox의 사용 형식은 `MsgBox(prompt [. Buttons] [, Title] [, Helpfile, Context])`이며, `MsgBox "안녕하세요", vbYesNo`와 `MsgBox Buttons:=vbYesNo, prompt:="박찬우"`, `MsgBox Buttons:=4, prompt:="박찬우"`(`vbYesNo`는 내장상수로 `4`와 같음)와 동일하게 작동함
+
+
+### 사. 변수 종류
+ - `Dim`으로 선언한 변수는 동적 변수로, 프로시져가 종료되면 초기화되며, `Static`으로 선언한 변수는 정적 변수로, 프로젝트(통합시트)가 열려있는 동안 유지됨
+ - 동적 변수를 `Sub ... End Sub` 바깥에(최상위) 선언하면, 정적 변수를 선언하는 것과 동일한 효과
+ - 프로젝트가 종료된 후에도 값을 유지하고 싶다면, 문서의 셀에 저장하는 것으로 대체할 수 
 
 *ref. http://iexceller.com
