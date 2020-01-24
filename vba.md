@@ -113,7 +113,7 @@
     y = InputBox("숫자를 입력하세요")
 
     MsgBox "결과값은 " & x / y & "입니다"
-
+ㅜ 별로 사용 혀
 ErrorTrap:
     If Err.Number <> 0 Then
         strMsg = "오류가 발생하였습니다. " & vbCrLf
@@ -125,5 +125,11 @@ End Sub
  - 위의 경우, 중간에서 문자나 0 같은 값이 대입되었을 때, `ErrorTrap`레이블로 넘어가서 실행하도록 함
  - 다른 방법 중 하나로 단계별로 코드를 실행하며, 디버딩 하는 방법이 있음 (마치 Jupyter Notebook 처럼)
  - 프로시져 내부에 포인터를 가져다 둔 상태로 \<F8\>을 누르면서 한줄 씩 프로씨져가 실행되며, 마우스를 가져가면 현재 변수에 할당 된 값도 파악할 수 있음 (locals 창을 활용하면 상시 변수값을 확인 가능 \<view\>-\<locals window\>)
- 
+
+### 바. 함수 사용법
+ - VBA도 함수 별로 사용 형식이 있으며, document가 되어 있음
+ - 함수 사용 시 파라미터에 접근하는 방법은, 1) 파라미터와 동일한 순서대로 입력값을 기입하거나, 2) 파라미터 이름표와 값을 매칭하여 입력할 수도 있음
+ - Document에 따르면 MsgBox의 사용 형식은 `MsgBox(prompt [. Buttons] [, Title] [, Helpfile, Context])`이며, `MsgBox "안녕하세요", vbYesNo`와 `MsgBox Buttons:=vbYesNo, prompt:="박찬우"`와 동일하게 작동함
+ - 
+
 *ref. http://iexceller.com
