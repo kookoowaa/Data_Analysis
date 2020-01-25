@@ -136,5 +136,17 @@ End Sub
  - `Dim`으로 선언한 변수는 동적 변수로, 프로시져가 종료되면 초기화되며, `Static`으로 선언한 변수는 정적 변수로, 프로젝트(통합시트)가 열려있는 동안 유지됨
  - 동적 변수를 `Sub ... End Sub` 바깥에(최상위) 선언하면, 정적 변수를 선언하는 것과 동일한 효과
  - 프로젝트가 종료된 후에도 값을 유지하고 싶다면, 문서의 셀에 저장하는 것으로 대체할 수 
+ - 변수의 종류에는 Integer, Long, Double, String 등 다양한 종류가 있으며, 단일 변수 종류가 여러개 담겨 있는 배열도 있음
+ - 일반적으로 변수의 선언은 `Dim <변수명> as Integer` 처럼 진행하며, 배열의 경우 `Dim <변수명>(n) as Integer`로 선언이 가능
+ - 배열의 경우 데이터 크기에 맞춰 동적으로 선언하게 되는 경우가 많으며, 이때는 비어있는 배열을 선언 후 `ReDim`을 통해 변수로 배열의 크기를 변경:
+ ```
+ Dim MyArray() as Integer
+ Dim intNum as Integer
+ intNum = Selection.Cells.Count
+ ReDim MyArray(intNum)
+ ```
+ ### 아. 실행 순서 제어 구문
+  - VBA에서도 조건문, 반복문을 활용하여 실행 순서를 효과적으로 제어
+  - 
 
 *ref. http://iexceller.com
