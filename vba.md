@@ -147,6 +147,16 @@ End Sub
  ```
  ### 아. 실행 순서 제어 구문
   - VBA에서도 조건문, 반복문을 활용하여 실행 순서를 효과적으로 제어
-  - 
+  - 조건문은 `If ... Then ... ElseIf ... Then ... Else ... Then ... End If` 형태의 If문과, `Select Case <조건> <결과> End Select` 형태의 Select ~ Case 문이 있음
+  - 다수의 조건이 요구되는 경우 Select ~ Case 문이 편하다고는 하나 큰 차이는 없음
+  - 반복문은 파이썬의 `For`, `While`과 유사한 형태의 반복문이 VBA에도 존재
+  - For ~ Next문의 경우 시작 수와 종료 수를 (step 수) 지정하고, 해당 숫자만큼 동일 작업을 반복적으로 수행
+  - For Each ~ In ~ Next의 경우 In 뒤의 행렬, 혹은 컬렉션 객체의 각 요소를 순환하며 호출
+  - `for i in range(0,10)`은 For ~ Next에 해당하며, `for i in list('a', 'b', 'c')`의 경우는 For Each ~ In ~ Next에 해당함
+  - **InputBox**는 사용자로부터 값을 입력 받을 때 사용하며, 함수와 `Application`의 메서드로 존재
+  - 함수로써의 **InputBox**는 다음과 같이 documentation이 되어 있음 `InputBox(prompt, [, title], [, default] [, xpos] [, ypos] [, helpfile, contxt])`
+  - 메서드로써의 **InputBox**는 다음과 같이 documentation 되어 있으며 `Application.InputBox(prompt, [, Title], [, Default] [, Left] [, Top] [, HelpFile, HelpContextID] [, Type])` 여기서 Type은 `InpuBox`를 통해 전달받을 데이터 타입을 지정 (i.e. Type=8, 레인지 개체)
+  - `While`같은 반복문은 `Do While ~ Loop`와 `Do Until ~ Loop` 두 종류의 구문이 있으며, 전자는 참일 경우에, 후자는 거짓일 경우에 반복문을 수행
+  - 여기서 `While/Until`은 `Do While/Until ~ Loop`로 사용될 수 도 있지만 `Do ~ Loop While/Until` 처럼 사용할 수도 있음
 
 *ref. http://iexceller.com
