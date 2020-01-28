@@ -66,22 +66,23 @@
 - Union 속성은 여러개의 Range를 하나로 묶어 Range object에 접근토록하며 합집합 개념의 `Union`과 교집합 개념의 `Intersect`가 있음: `Union(Arg1 As Range, [Arg2], [Arg3]....)`
 - 이 외 이동 명령어(F5)의 기능들을 VBA로 구현하는 방법은 `SpecialCells` 라고 하며, 아래 파라미터를 참조:
 
-	|상 수|셀 타입|
-	|---|---|
-	|xlCelltypeAllFormatConditions|표시 형식이 설정되어 있는 셀|
-	|xlCelltypeValidations|유효성 조건이 설정된 셀|
-	|xlCelltypeBlanks|빈 문자열이 들어있는 셀|
-	|xlCelltypeComments|메모가 들어있는 셀|
-	|xlCelltypeConstants|상수가 포함되어 있는 셀
-	|xlCelltypeFormulas|수식이 들어있는 셀|
-	|xlCelltypeLastCell|사용된 범위 내의 마지막 셀
-	|xlCelltypeSameFormatConditions|같은 서식을 가진 셀
-	|xlCelltypeSameValidation|같은 유효성 조건을 가진 셀
-	|xlCelltypeVisible|화면에 보이는(나타나 있는) 모든 셀
-	|xlErrors|에러값
-	|xlLogical|논리값
-	|xlNumbers|숫자값
-	|xlTextValues|문자열값
+	| 상 수                          | 셀 타입                            |
+	| ------------------------------ | ---------------------------------- |
+	| xlCelltypeAllFormatConditions  | 표시 형식이 설정되어 있는 셀       |
+	| xlCelltypeValidations          | 유효성 조건이 설정된 셀            |
+	| xlCelltypeBlanks               | 빈 문자열이 들어있는 셀            |
+	| xlCelltypeComments             | 메모가 들어있는 셀                 |
+	| xlCelltypeConstants            | 상수가 포함되어 있는 셀            |
+	| xlCelltypeFormulas             | 상수가 포함되어 있는 셀            |
+	| xlCelltypeFormulas             | 수식이 들어있는 셀                 |
+	| xlCelltypeLastCell             | 사용된 범위 내의 마지막 셀         |
+	| xlCelltypeSameFormatConditions | 같은 서식을 가진 셀                |
+	| xlCelltypeSameValidation       | 같은 유효성 조건을 가진 셀         |
+	| xlCelltypeVisible              | 화면에 보이는(나타나 있는) 모든 셀 |
+	| xlErrors                       | 에러값                             |
+	| xlLogical                      | 논리값                             |
+	| xlNumbers                      | 숫자값                             |
+  | xlTextValues                   | 문자열값                           |
   
 - 예를 들어 "A1:G20"에서 빈 셀만 선택하고 싶다면 다음과 같이 구현 가능: `Range("A1:G20").SpecialCells(xlCellTypeBlanks).Select`
 - `End` 속성도 빈번하게 활용하는 기능 중 하나로, ctrl + 방향키 조합의 기능을 VBA로 구현하는 방법임: `Range("A65536").End(xlUp).Offset(1, 0).Select`
@@ -113,7 +114,7 @@
     y = InputBox("숫자를 입력하세요")
 
     MsgBox "결과값은 " & x / y & "입니다"
-ㅜ 별로 사용 혀
+
 ErrorTrap:
     If Err.Number <> 0 Then
         strMsg = "오류가 발생하였습니다. " & vbCrLf
