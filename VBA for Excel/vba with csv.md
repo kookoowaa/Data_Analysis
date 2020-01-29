@@ -71,3 +71,7 @@
       End With
   End Sub
   ```
+
+ref1. https://stackoverflow.com/questions/46638267/import-csv-using-utf-8
+
+ref2. http://blog.naver.com/PostView.nhn?blogId=iotc21&logNo=221488099948
