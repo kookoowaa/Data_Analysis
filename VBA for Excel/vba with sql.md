@@ -5,6 +5,8 @@
 - VBA 창에서 reference 설정이 필수
 - 추가해야 하는 reference는 `Microsoft ActiveX Data Objects 2.8 Library`임
 
+
+
 ## 2. VBA로 SQL 접근하기
 
 - 1번의 전제 조건이 갖춰지면, VBA로 SQL 접근이 가능
