@@ -3,7 +3,7 @@
 >
 > - Machine learning algorithms
 
-### [Sentence Embedding](/Studies (Algorithms%2C Books%2C Mooks%2C etc.)/Sentence Embedding/README.md)
+### [Sentence Embedding](/Studies%20(Algorithms%20Books%20Mooks%20etc.)/Sentence%20Embedding/README.md)
 
 - 
 
