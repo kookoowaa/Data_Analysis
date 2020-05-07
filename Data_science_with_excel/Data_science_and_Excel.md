@@ -42,7 +42,9 @@ sales.loc[sales["Product"] == "Bananas", "Sales"].sum()
 ## Pivot Tables in pandas
 
 ```python
-sales.pivot_table(index = 'City', values = 'Sales', aggfunc = 'sum')
+sales.pivot_table(index = 'City', columns = 'Product', values = 'Sales', aggfunc = 'sum')
+### or ###
+pd.crosstab(index=sales['City'], columns=sales['Product'], values = sales['Sales'], aggfunc='sum')
 ```
 
 ## Color Maps formatting in pandas
