@@ -1,6 +1,7 @@
 # openpyxl
 
 - `openpyxl`은 `xlwings`와 더불어 python으로 excel을 다루는 유용한 library임
+- 느리다는 단점이 있지만, 쓰기밖에 못하는 `XlsxWriter`와 `PyExcelerate`에 비해 장점이 명확
 
 ## 1. 기본적인 사용 방법
 - 액샐 파일 object 생성
