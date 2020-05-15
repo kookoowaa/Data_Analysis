@@ -20,3 +20,8 @@
 
 - https://www.colorbox.io/
 - Palette generator
+
+## 5. ColorSpace
+
+- https://mycolor.space/?hex=%23845EC2&sub=1
+- Pick a color to generate themes
