@@ -1,3 +1,6 @@
+- Dropdown 로직은 모든 trace를 figure에 올린 후 dropdown을 통해 보고 싶은 trace를 선택하는 로직
+- `update_layout(updatemenus[dict(buttons=list([dict(label="{이름}", method="{방식}", args=[{"visible":[True or False....}...])])])` 형태로 Dropdown 설정
+
 ```python
 #!/usr/bin/env python
 # coding: utf-8
