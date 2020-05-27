@@ -1,5 +1,6 @@
 - Dropdown 로직은 모든 trace를 figure에 올린 후 dropdown을 통해 보고 싶은 trace를 선택하는 로직
 - `update_layout(updatemenus[dict(buttons=list([dict(label="{이름}", method="{방식}", args=[{"visible":[True or False....}...])])])` 형태로 Dropdown 설정
+- `args`에서 `visible` 에 대한 `True, False` 튜플값을 입력하여 원하는 trace만 선택토록 함
 
 ```python
 #!/usr/bin/env python
