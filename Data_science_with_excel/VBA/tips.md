@@ -20,3 +20,5 @@
 - `For ~ Next`는 사실 `For ~ Next Step 1`와 같이 다시 적을 수 있으며 여기서 `Step {n}`으로 이동 크기를 지정할 수 있음 (음수 가능)
 
 - Row를 선택하는 방법은 `Rows({n})` 혹은 `Cells({n}, {n 또는 알파벳}).EntireRow`로 선택 가능
+
+- `if`문 사용 시 `AND` 조건은 중첩문으로 또는 `If {조건1} and {조건2} Then`으로 사용 가능하며, `OR` 조건은 `If {조건1} Or {조건2} Then`으로 적용 가능
