@@ -22,3 +22,5 @@
 - Row를 선택하는 방법은 `Rows({n})` 혹은 `Cells({n}, {n 또는 알파벳}).EntireRow`로 선택 가능
 
 - `if`문 사용 시 `AND` 조건은 중첩문으로 또는 `If {조건1} and {조건2} Then`으로 사용 가능하며, `OR` 조건은 `If {조건1} Or {조건2} Then`으로 적용 가능
+
+- VBA 코드 창에서 좌상단 드랍다운에서 `일반` 대신 `Workbook`을 선택하면 우측 드랍다운이 이벤트로 바뀌며, `Open`, `BeforeClose` 등 이벤트에 대한 trigger 함수를 적용할 수 있음
