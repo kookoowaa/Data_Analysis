@@ -44,3 +44,36 @@ Sub Col_Make()
     Next RngR
     
 End Sub
+
+
+
+
+
+'평균 조건이 하나 추가된다면 다음과 같이 코드를 추가
+Sub Col_Make()
+    
+    Dim RngR As Range
+    Dim RngD As Range
+    Dim lngE As Integer
+    
+    lngE = Range("B2")
+    Set RngD = Range("M13:M" & lngE)
+    Range("L13:R" & lngE).Interior.ColorIndex = 2
+    For Each RngR In RngD
+        'If 조건에 And조건이 추가되어 평균점수(B4)와 비교
+        If RngR = Range("B3") And RngR.Offset(0, 5) > Range("B4") Then
+            RngR.Offset(0, -1).Resize(1, 7).Interior.ColorIndex = 6
+        End If
+
+    Next RngR
+    
+End Sub
+
+'또한 TextBox의 경우 Change 대신 AfterUpdate로 함수를 적용해야 숫자 하나씩 입력될때마다 함수를 호출하는 것을 방지
+Private Sub TextBox1_AfterUpdate()
+    
+    If Me.TextBox1.Value > 0 Then
+        Range("B4") = Me.TextBox1.Value
+        Call Col_Make
+    End If
+End Sub
