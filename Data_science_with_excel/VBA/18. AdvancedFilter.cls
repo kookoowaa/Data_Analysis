@@ -73,7 +73,6 @@ Sub Sample_outcome()
     lngE = Worksheets("원본데이터(과제물)").Range("F10000").End(xlUp).Row
     Set rngD = Worksheets("원본데이터(과제물)").Range("F6:L" & lngE)
     Set rngC = Worksheets("원본데이터(과제물)").Range("O3:p4")
-
     Set rngP = Range("h8:k8")
     
     rngP.CurrentRegion.Offset(1, 0).Clear
