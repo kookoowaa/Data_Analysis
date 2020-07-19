@@ -78,6 +78,5 @@ Sub Sample_outcome()
     rngP.CurrentRegion.Offset(1, 0).Clear
     rngD.AdvancedFilter xlFilterCopy, CriteriaRange:=rngC, _
                                             CopyToRange:=rngP, Unique:=True
-
-    
+ 
 End Sub
