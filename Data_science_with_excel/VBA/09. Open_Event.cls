@@ -1,19 +1,15 @@
-Private Sub Workbook_Open()
+Private Sub CommandButton1_Click()
     
-    MsgBox "안녕하세요"
+    Sheet3.Range("B2") = Me.TextBox1.Value
     
-End Sub
-
-
-
-Private Sub Workbook_BeforeClose(Cancel As Boolean)
-    
-    If MsgBox("close?", vbYesNo) = vbNo Then
-        MsgBox "Lets continue"
-        Cancel = True
+    If Sheet3.Range("B3") = 1 Then
+        MsgBox ("hej, welcome")
+        Unload UserForm1
+        
+    Else
+        MsgBox ("Wrong ID")
+        ActiveWorkbook.Close (False)
+        
     End If
     
-
 End Sub
-
-'UserForm OpenEvent
