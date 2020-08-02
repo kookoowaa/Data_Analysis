@@ -38,3 +38,20 @@ Sub Like_RE()
     Range("L9") = lngEtc
     
 End Sub
+
+'위의 예제를 활용한 유효성 검증 매크로
+Private Sub InputBT_Click()
+    Dim strCnt As Integer
+    
+    For i = 1 To Len(Me.NameTB)
+        If Not Mid(Me.NameTB, i, 1) Like "[ㄱ-힣]" Then
+            strCnt = strCnt + 1
+        End If
+    Next i
+    
+    If strCnt = 0 Then
+        Range("A1").Value = Me.NameTB
+    Else
+        MsgBox "wrong input"
+    End If
+End Sub
