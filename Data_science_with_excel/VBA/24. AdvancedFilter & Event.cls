@@ -9,6 +9,7 @@ Private Sub Worksheet_Change(ByVal Target As Range)
     
     If Intersect(Target, Range("I2")) Is Nothing Then Exit Sub
     
+    'RngP Clear에 따른 무한반복을 대비하여 EnableEvents 값을 False로 변환, 이후 아래에서 복구
     Application.EnableEvents = False
     
     lngE = Range("A10000").End(xlUp).Row
