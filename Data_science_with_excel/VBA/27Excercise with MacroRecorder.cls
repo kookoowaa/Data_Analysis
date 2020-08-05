@@ -61,3 +61,38 @@ Sub t1()
     Intersect(rngMonth, rngTrans, rngCrit).Interior.Color = lngCol
 
 End Sub
+
+
+
+'차트 만들기
+Sub 매크로8()
+    
+    Dim cht As ChartObject
+    
+    Dim rngCht As Range
+    
+    
+    
+    If Sheet4.ChartObjects.Count = 0 Then
+        ActiveSheet.Shapes.AddChart2(227, xlLine).Select
+        Sheet4.ChartObjects(1).Left = Range("H10").Left
+        Sheet4.ChartObjects(1).Top = Range("H10").Top
+    End If
+    Set cht = Sheet4.ChartObjects(1)
+    cht.Chart.ChartArea.ClearContents
+    
+    For Each Rng In Range("C5:C27")
+        If Rng = "2월" Then
+            If rngCht Is Nothing Then
+                Set rngCht = Union(Rng.Offset(, -1), Rng.Offset(, 3))
+            Else
+                Set rngCht = Union(rngCht, Rng.Offset(, -1), Rng.Offset(, 3))
+            End If
+        End If
+    Next Rng
+    
+    cht.Chart.SetSourceData Source:=rngCht
+    cht.Chart.ChartStyle = 300
+    
+    
+End Sub
