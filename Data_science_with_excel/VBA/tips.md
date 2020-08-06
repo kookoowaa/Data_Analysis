@@ -40,3 +40,12 @@
   > 3. `Sheet(1).Select`: 시트 순서가 첫번째인 시트 선택
 
 - `Select`와 `Activate`는 비슷한 기능을 수행하지만, `Activate`의 경우 범위 선택이 되어 있을 때 선택된 범위를 변경하는 것이 아니라 **활성화 된** 셀만 변경한다는 점에서 차이가 있음
+
+- VBA로 차트를 다룰 때에는 상위 개념의 `ChartObjects`와 `CharObjects.Chart`가 있음:
+
+  > - `ChartObjects`는 위치, 너비, 이름 등을 설정
+  > - `ChartObjects.Chart`는 데이터 범위, 스타일 등을 설정
+
+- 셀 크기와 동일하게 `Object`크기를 가져가고 싶다면, 셀 범위를 `Range()`로 잡은 후 `Range().Width` 혹은 `Range().Height`로 범위의 크기를 불러올 수 있음
+
+- 파이썬에서 `Try ... Except` 구문처럼 VBA에서 사용할 수 있는 구문은 `On Error Resume Next .... On Error GoTo 0`가 있음
