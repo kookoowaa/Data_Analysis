@@ -43,6 +43,9 @@ Sub t1()
     For Each Rng In rngtmp.Offset(, 4)
         If strCrit = "이상" Then
             If Rng >= lngVal Then
+            '아래는 위와 동일한 프로세스 수행:
+            'F11 셀 값 처럼 ">="문자 데이터를 활용하여 VBA 코드 실행할 때에는 Evaluate() 함수를 사용
+            'If Evaluate(Rng & Range("F11") & lngVal) Then
                 If rngCrit Is Nothing Then
                     Set rngCrit = Rng.Offset(, -4).Resize(, 5)
                 Else
@@ -71,12 +74,18 @@ Sub 매크로8()
     
     Dim rngCht As Range
     
-    
+    'on error resume Next
+    'ActiveSheet.chartobjects(1).Delete
+    'on error goto 0
+
     
     If Sheet4.ChartObjects.Count = 0 Then
         ActiveSheet.Shapes.AddChart2(227, xlLine).Select
         Sheet4.ChartObjects(1).Left = Range("H10").Left
         Sheet4.ChartObjects(1).Top = Range("H10").Top
+        '아래 내용 추가 : Range("A:G").width도 정상적으로 작동함
+        Sheet4.ChartObjects(1).Width = Range("H10:O20").Width
+        Sheet4.ChartObjects(1).Height = Range("H10:O20").Height
     End If
     Set cht = Sheet4.ChartObjects(1)
     cht.Chart.ChartArea.ClearContents
