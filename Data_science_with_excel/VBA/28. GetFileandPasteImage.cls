@@ -7,7 +7,10 @@
 '' 또 다른 방법으로는 Application.GetOpenFilename()으로 파일 열기 기능이 실행되며, 선택한 파일의 전체 경로를 String 값으로 반환하는 방법도 있음
 '' 마지막으로 Dir({디렉터리 주소}) 함수로 파일 경로를 가져올 수도 있는데, 이 때 *같은 방식으로 RE를 사용할 수 있어서 자동화에 써먹기도 함 (".*", 확장자가 불확실한 경우)
 '' 가져온 경로 값으로 이미지를 불러오는 것은 ActiveSheet.Pictures.Insert()함수로 실행함
+'' ActiveSheet.Pictures.Insert()함수는 인터넷 주소로 이미지를 가져올 수도 있음
 
+
+'' 31강 과제물 풀이.xlsm 파일 참조
 Private Sub Worksheet_BeforeDoubleClick(ByVal Target As Range, Cancel As Boolean)
 
     Dim strPath     As String
@@ -54,3 +57,70 @@ Sub Image_Insert(Optional strPath As String)
     End With
 End Sub
 
+
+'' VBA실무_이미지가져오고저장하기.xlsm 파일 참조
+Sub Get_image_Url()
+
+    Dim strUrl      As String
+    Dim rngT        As Range
+    Dim img         As Object
+    
+    ActiveSheet.Pictures.Delete
+    
+    strUrl = Range("D6").Value
+    Set rngT = Range("D8")
+    
+    Set img = ActiveSheet.Pictures.Insert(strUrl)
+    
+    img.Left = rngT.Left + (rngT.Width - img.Width) / 2
+    img.Top = rngT.Top + (rngT.Height - img.Height) / 2
+    
+End Sub
+
+Sub Get_image_Url_change_dim()
+
+    Dim strUrl      As String
+    Dim rngT        As Range
+    Dim img         As Object
+    
+    ActiveSheet.Pictures.Delete
+    
+    strUrl = Range("D6").Value
+    Set rngT = Range("D8")
+    
+    Set img = ActiveSheet.Pictures.Insert(strUrl)
+    img.Name = Range("C6")
+    
+    ' 너비/높이 조정
+    If img.Height > rngT.Height Then
+        img.Height = rngT.Height
+    End If
+    
+    If img.Width > rngT.Width Then
+        img.Width = rngT.Width
+    End If
+    
+    img.Left = rngT.Left + (rngT.Width - img.Width) / 2
+    img.Top = rngT.Top + (rngT.Height - img.Height) / 2
+    
+End Sub
+
+Sub Image_Save()
+    
+    Dim strSavePath     As String
+    Dim img                     As Object
+    
+    Set img = ActiveSheet.Shapes(Range("C6").Value)
+    strSavePath = ActiveWorkbook.Path & "\" & Range("C6").Value & ".png"
+    
+    img.CopyPicture appearance:=xlScreen, Format:=xlPicture
+    
+    With Sheet6.ChartObjects.Add(0, 0, img.Width, img.Height)
+        With .Chart
+                 .Paste
+                 .Export strSavePath
+                 .Parent.Delete
+        End With
+    End With
+    
+End Sub
