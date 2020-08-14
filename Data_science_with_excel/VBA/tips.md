@@ -49,3 +49,5 @@
 - 셀 크기와 동일하게 `Object`크기를 가져가고 싶다면, 셀 범위를 `Range()`로 잡은 후 `Range().Width` 혹은 `Range().Height`로 범위의 크기를 불러올 수 있음
 
 - 파이썬에서 `Try ... Except` 구문처럼 VBA에서 사용할 수 있는 구문은 `On Error Resume Next .... On Error GoTo 0`가 있음
+
+- Excel에서 잠긴 파일도 해제가 가능하며, 이때는 zip 파일로 변경, `xl\worksheets\sheet{n}.xml`에서 `<sheetProtection>`항목을 삭제한 후 업데이트
