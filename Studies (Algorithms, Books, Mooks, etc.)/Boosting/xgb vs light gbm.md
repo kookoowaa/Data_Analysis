@@ -43,6 +43,10 @@
 
 ## 3. XGBoost의 parameters
 
+> - c
+
+### sub1
+
 
 
 ref. https://towardsdatascience.com/lightgbm-vs-xgboost-which-algorithm-win-the-race-1ff7dd4917d
