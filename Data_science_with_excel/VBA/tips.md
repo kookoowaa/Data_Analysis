@@ -51,3 +51,8 @@
 - 파이썬에서 `Try ... Except` 구문처럼 VBA에서 사용할 수 있는 구문은 `On Error Resume Next .... On Error GoTo 0`가 있음
 
 - Excel에서 잠긴 파일도 해제가 가능하며, 이때는 zip 파일로 변경, `xl\worksheets\sheet{n}.xml`에서 `<sheetProtection>`항목을 삭제한 후 업데이트
+
+- 배열은 `Dim {배열명}()`으로 정의 가능하며, `Redim {배열명}(n)`으로 크기를 변경할 수 있음 (단, 처음 변수 정의 때 `{배열명}(n)`으로 정의 시 배열 크기는 고정)
+
+- `Redim {배열명}(n)` 사용 시 배열 값들은 초기화 되며, 이때 초기화를 방지하려면 **`Redim Preserve {배열명}(n)`**으로 배열을 쌓아나아갈 수 있음
+
