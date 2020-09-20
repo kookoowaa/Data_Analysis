@@ -42,3 +42,5 @@ scrapy genspider {스파이더명} {url주소}
 https://pycoding.tistory.com/22
 
 https://kscodebase.tistory.com/143?category=1110549
+
+https://haerong22.tistory.com/51
