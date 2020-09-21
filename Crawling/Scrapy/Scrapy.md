@@ -13,11 +13,11 @@
   scrapy startproject {프로젝트명}
   ```
 
-- *스파이더 만들기* (\프로젝트명\프로젝트명 디렉토리로 이동 후):
+- 스파이더 만들기 (\프로젝트명\프로젝트명 디렉토리로 이동 후):
 
-```bash
-scrapy genspider {스파이더명} {url주소}
-```
+  ```bash
+  scrapy genspider {스파이더명} {url주소}
+  ```
 
 - 스파이더(`{스파이더명}.py`)가 생성됨과 동시에`item.py`에 `{스파이더명}`의 class가 동시에 생성됨
 
@@ -33,9 +33,24 @@ scrapy genspider {스파이더명} {url주소}
   from {프로젝트명}.items import {스파이더명}
   ```
 
-  
 
-- 
+## 예제 (WikiBook)
+
+### 1. 프레임워크 구성 (프로젝트 및 스파이더 생성)
+
+- 위의 예제처럼 프로젝트(`TestProject1`) 및 스파이더(`TestSpider`)를 생성:
+
+  ```bash
+  ~> scrapy startproject TestProject1
+  ~> cd TestProject1/TestProject1
+  ~/TestProject1/TestProject1> scrapy genspider TestSpider wikibook.co.kr/list
+  ```
+
+### 2. Spider 클래스를 작성하여 크롤링과 데이터 추출 코드 작성
+
+
+
+
 
 
 
