@@ -8,6 +8,6 @@
 from itemadapter import ItemAdapter
 
 
-class Testproject1Pipeline:
+class MyprojectPipeline:
     def process_item(self, item, spider):
         return item
