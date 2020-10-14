@@ -108,7 +108,7 @@ $ tree myproject /f
           pass
   ```
 
-  
+- Shell scripte를 통해 interactive로 테스트 해보는 것도 가능
 
 - Spider는 기본적으로 **ITEM**이라는 객체에 추출한 데이터를 저장하며, `items.py`를 통해 정의(`class`) (`scrapy.Item`을 상속받음)
 
