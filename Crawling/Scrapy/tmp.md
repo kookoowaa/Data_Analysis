@@ -47,8 +47,8 @@ $ tree myproject /f
   ```
 
   ```python
+  ## news.py
   import scrapy
-  
   
   class NewsSpider(scrapy.Spider):
       name = 'news'
@@ -64,6 +64,51 @@ $ tree myproject /f
   > - `allowed_domains`와 `start_urls`는 위에서 두번째 파라미터 값을 상속받음
   > - `start_urls` 같은 경우는 복수의 URL을 지정할 수도 있음
   > - `parse()` 메서드는 추출한 웹페이지 처리를 위한 콜백 함수임
+
+- **http://engadget.com/** 에서 링크들을 크롤링 하려면 위의 `news.py`의 parse 함수를 아래와 같이 변경
+
+  ```python
+  import scrapy
+  
+  class NewsSpider(scrapy.Spider):
+      name = 'news'
+      allowed_domains = ['engadget.com']
+      start_urls = ['http://engadget.com/']
+  
+      def parse(self, response):
+          #link = response.css('a.o-hit_link::attr("href")').extract() # <a> 태그 중 <href> 태그를 필터
+          link = response.css('a::attr(href)').getall()
+          link = filter(lambda x: x != '#', link) # 추출한 태그 중 속성이 '#'로 지정되는 경우 이를 제거
+          link = list(link)
+          print(link)
+          pass
+  ```
+
+- 이어서 위에서 parse한 링크를 순회하도록 변경하려면 다시 아래와 같이 `news.py`를 변경
+
+  ```python
+  import scrapy
+  
+  class NewsSpider(scrapy.Spider):
+      name = 'news'
+      allowed_domains = ['engadget.com']
+      start_urls = ['http://engadget.com/']
+  
+      def parse(self, response):
+          link = response.css('a::attr(href)').getall()
+          for url in link:
+              if url.find("products")==1:
+                  continue
+              elif url == "#":
+                  continue
+              yield scrapy.Request(response.urljoin(url), self.parse_topics)
+          link = filter(lambda x: x != '#', link) # 추출한 태그 중 속성이 '#'로 지정되는 경우 이를 제거
+  	
+      def parse_topics(self, response):
+          pass
+  ```
+
+  
 
 - Spider는 기본적으로 **ITEM**이라는 객체에 추출한 데이터를 저장하며, `items.py`를 통해 정의(`class`) (`scrapy.Item`을 상속받음)
 
