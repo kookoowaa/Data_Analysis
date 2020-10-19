@@ -65,6 +65,19 @@ $ tree myproject /f
   > - `start_urls` 같은 경우는 복수의 URL을 지정할 수도 있음
   > - `parse()` 메서드는 추출한 웹페이지 처리를 위한 콜백 함수임
 
+- 동시에 `items.py`에 클래스를 생성하며,  **ITEM** 객체에 추출한 데이터를 저장하는 것을 원칙으로 함 (`scrapy.Item`을 상속받음)
+
+  ```python
+  # items.py
+  class Headline(scrapy.Item):
+      title = scrapy.Field()
+      body = scrapy.Field()
+      
+  item = Headline()
+  item['title'] = "Example"
+  print(item['title'])
+  ```
+
 - **http://engadget.com/** 에서 링크들을 크롤링 하려면 위의 `news.py`의 parse 함수를 아래와 같이 변경
 
   ```python
@@ -110,20 +123,15 @@ $ tree myproject /f
 
 - Shell scripte를 통해 interactive로 테스트 해보는 것도 가능
 
-- Spider는 기본적으로 **ITEM**이라는 객체에 추출한 데이터를 저장하며, `items.py`를 통해 정의(`class`) (`scrapy.Item`을 상속받음)
-
-  ```python
-  class Headline(scrapy.Item):
-      title = scrapy.Field()
-      body = scrapy.Field()
-      
-  item = Headline()
-  item['title'] = "Example"
-  print(item['title'])
-  ## Example
+  ```bash
+  $ scrapy shell
+  ...
+  ...
+  ln [1]: 
   ```
-  
+
 - 
+
 
 ___
 
