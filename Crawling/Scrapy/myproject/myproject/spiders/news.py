@@ -6,8 +6,8 @@ class NewsSpider(scrapy.Spider):
     start_urls = ['http://engadget.com/']
 
     def parse(self, response):
-        #link = response.css('a.o-hit_link::attr("href")').extract() # <a> 태그 중 <href> 태그를 필터
-        link = response.css('a::attr(href)').getall()
+        #link = response.css('a.o-hit_link::attr("href")').extract() 
+        link = response.css('a::attr(href)').getall() # <a> 태그 중 <href> 태그를 필터
         for url in link:
             if url.find("products")==1:
                 continue
