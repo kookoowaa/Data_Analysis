@@ -1,4 +1,3 @@
-
 *checkpoint.ipynb
-~$*.xlsm
-~$*.pyc
+*.xlsm
+*.pyc
