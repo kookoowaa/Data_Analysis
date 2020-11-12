@@ -59,12 +59,30 @@
 - 이때 StrSQL의 `FROM` 절에서 참조하는 테이블명은 csv 파일명을(확장자 포함) 사용
 
   ```vb	
-  strSQL = "SELECT * FROM ["&"파일명"&"]"
+  strSQL = "SELECT * FROM ["&{파일명}&"]"
+  strSQL = "SELECT * FROM [sampledata.csv]"
   ```
 
 ## 4. String connection to Access
 
+- Access를 dataset으로 사용할 때에는 다음과 같은 string connection 구조를 사용
 
+  ```vb
+  strConn = "Provider=Microsoft.ACE.OLEDB.12.0;"
+  strConn = strConn & "Data Source= {Access 파일 경로 및 파일명};"
+  'rs.Open strSQL, strConn, adOpenStatic, adLockReadOnly, adCmdText
+  ```
+
+- 위의 파라미터에 `Data Source` 파라미터만 파일 경로로 설정해주면 string connection은 완성
+
+- 이때 StrSQL의 `FROM` 절에서 참조하는 테이블명은 Access db 내의 테이블명을 사용
+
+  ```vb	
+  strSQL = "SELECT * FROM ["&{테이블명}&"]"
+  strSQL = "SELECT * FROM [sampledata]"
+  ```
+
+## 
 
 
 
