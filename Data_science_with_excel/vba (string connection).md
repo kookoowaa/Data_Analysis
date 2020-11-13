@@ -82,7 +82,35 @@
   strSQL = "SELECT * FROM [sampledata]"
   ```
 
-## 
+## 5. recordset.Open
+
+- `recordset.Open` 의 구조를 살펴보면 다음과 같음
+
+  ```vb
+  recordset.Open Source, ActiveConnection, CursorType, LockType, Options  
+  ```
+
+- 여기서 `Source:=`는 SQL문, `ActiveConnection:=`에는 String connection이 들어가게 됨
+
+- 이 외 선택 파라미터로 `CursorType`, `LockType`, `Options`가 들어갈 수 있음:
+
+  >### CursorTypeEnum
+  >
+  >- 기본 값으로 `adOpenForwardOnly`를 갖으며 Connection 기준으로, 레코드 앞으로만 이동 가능함
+  >- `adOpenDynamic`을 사용하면, 동적 커서를 사용하며, 다른 사용자에 의한 추가, 변경 및 삭제 내용이 표시됨
+  >- `adOpenStatic`의 경우 복사본 커서를 사용하며, 다른 사용자의 추가, 변경 또는 삭제는 표시하지 않음
+
+  > ### LockType
+  >
+  > - 기본값으로 `adLockReadOnly`를 갖으며, 데이터 변경을 허용하지 않음
+  > - 반대의 경우 `adLockOptimistic`이나 (`Update` 메서드 필수),  `adLockBatchOptimistic`을 지정 시 업데이트가 가능
+
+  > ### Options
+  >
+  > - `adCmdText`를 지정할 경우 SQL 문장 같이 텍스트로 된 명령을 사용
+  > - `adCmdTable`은 레코드셋을 생성하는 테이블 명을 지칭
+
+
 
 
 
