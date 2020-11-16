@@ -37,7 +37,7 @@
 
 - 위의 파라미터에 `Data Source` 파라미터만 파일 경로로 설정해주면 string connection은 완성
 
-- 이때 StrSQL의 `FROM` 절에서 참조하는 테이블명은 시트명을 사용
+- 이때 StrSQL의 `FROM` 절에서 참조하는 테이블명은 시트명을 (시트명 뒤에 $문자 추가) 사용
 
   ```vb	
   '시트명이 Table_1일 때
