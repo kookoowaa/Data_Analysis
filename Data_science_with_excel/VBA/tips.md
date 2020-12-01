@@ -45,6 +45,9 @@
 
   > - `ChartObjects`는 위치, 너비, 이름 등을 설정
   > - `ChartObjects.Chart`는 데이터 범위, 스타일 등을 설정
+  > - `ChartObjects.Chart`에서 데이터 범위를 갱신할 때에는 `.SetSourceData`를 사용
+  >   이 때 파라미터로 `Source:=`를 사용하며, 행/열을 변경할 때에는 `PlotBy:=` 파라미터를 사용
+  > - 범례를 갱신할 때에는 `.SeriesCollection.NewSeries`로 SeriesCollection을 생성한 후, 하나씩 loop 돌며 `.SeriesCollection(i).Name` 값을 갱신
 
 - 셀 크기와 동일하게 `Object`크기를 가져가고 싶다면, 셀 범위를 `Range()`로 잡은 후 `Range().Width` 혹은 `Range().Height`로 범위의 크기를 불러올 수 있음
 
@@ -65,4 +68,3 @@
   > - 배열의 크기를 미리 정하지 않아도 유연하게 확장할 수 있음
   > - 인덱스를 포함하지 않으나, `Key` 값을 기준으로 `Item` 값을 호출할 수 있음
   > - `{Dict}.Add {Key}, {Item}` 형태로 객체 값을 갱신
-
