@@ -1,4 +1,4 @@
-# VBA and string connection
+# OLEDB, VBA and string connection
 
 > - VBA 창에서 reference 설정이 필수
 > - 추가해야 하는 reference는 `Microsoft ActiveX Data Objects x.x Library`임 (6.1 사용)
@@ -110,9 +110,59 @@
   > - `adCmdText`를 지정할 경우 SQL 문장 같이 텍스트로 된 명령을 사용
   > - `adCmdTable`은 레코드셋을 생성하는 테이블 명을 지칭
 
+## 다른 방식으로 OLEDB 사용하기
 
+- 위의 방식은 `RecordSet`을 열고 SQL문과 String connection을 한번에 push
 
+- 위의 프로세스를 조금더 한단계씩 끊어서 살펴보면 다음과 같음
 
+  ```vb
+  Sub DataFromSQLServer()
+      
+      'connection related variables
+      Dim oCoon As ADODB.Connection
+      Dim rs As ADODB.Recordset
+      Dim fld As ADODB.Field
+      
+      'query related variables
+      Dim mssql As String
+      
+      'excel related variables
+      Dim row As Integer
+      Dim col As Integer
+      Dim ws As ThisWorkbook
+      Set ws = ThisWorkbook
+      Application.ScreenUpdating = False
+      
+      'process begins
+      Set oConn = New ADODB.Connection
+      Set rs = New ADODB.Recordset
+      mssql = "Select" & _
+                    "userid" & _
+                    ", initiateddatetime" & _
+                    "From" & _
+                    "I3_IC.dbo.Calldetail_viw"
+      
+                  oConn.ConnectionString = "driver=RETKRCSC-NT8004;server=I3_IC;" & _ 
+                  "authenticateduser=True;database={database}"
+                  'select @@ servername to retrive servername
+      
+                  '===== If you have ID and password for SQL-server to log in =====
+      'oConn.ConnectionString = "driver={DriverName};server={ServerName};" & _
+      '                                            "uid={UserName};pws={Password};database={database}"
+      '==================================================
+       oConn.ConnectionTimeout = 30
+       oConn.Open
+       rs.Open mssql, oConn
+       If rs.EOF Then
+          MsgBox "No matching records found."
+          rs.Close
+          oConn.Close
+          Exit Sub
+      End If
+  end sub
+                  
+  ```
 
-
+  
 
