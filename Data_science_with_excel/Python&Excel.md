@@ -63,7 +63,7 @@ sales.style.bar(subset=['Sales'], color = '#50C878')
 
 ## xlwings
 
-
+- `xlwings`는 최근 안쓰는 추세 (유료 전환)
 
 Ref.
 
