@@ -6,6 +6,16 @@
 
 당연히 BigQuery나 Cloud SQL과의 연결이 가능할 뿐 아니라, 파일을 업로드 하여 리포트를 만드는 것도 가능함
 
+
+
+### 1. Data Studio 열기
+
+### 2. 리포트 생성하기
+
+
+
+
+
 ## Launch Data Studio and create a blank report
 
 1. Open [Google Data Studio](https://datastudio.google.com/) in a new browser tab or window.
@@ -48,13 +58,7 @@ A new, untitled report opens.
 
 You should now see the ratio column added with values as a percentage.
 
-Delete the table that was created for you - you will now create a report with a customized table.
 
-Click *Check my progress* to verify the objective.
-
-Launch Data Studio and create a blank report
-
-내 진행 상황 확인하기
 
 
 
