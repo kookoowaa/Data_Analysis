@@ -6,6 +6,8 @@
 
 당연히 BigQuery나 Cloud SQL과의 연결이 가능할 뿐 아니라, 파일을 업로드 하여 리포트를 만드는 것도 가능함
 
+[Data Studio 가기](https://datastudio.google.com/u/0/navigation/reporting)
+
 
 
 ### 1. 데이터 연결하기
