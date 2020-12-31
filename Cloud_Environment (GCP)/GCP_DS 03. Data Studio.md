@@ -12,14 +12,13 @@
 
 ### 1. 데이터 연결하기
 
-A new, untitled report opens.
-
-1. You'll be on the **Connect to data** tab.
-2. In the Google Connectors section, select **BigQuery**.
+1.  **데이터에 연결**(Connect to data) 탭을 통해 여러 데이터 소스와 연결 가능
+2. Google Connectors에는 각종 데이터 소스와 연결할 수 있도록 구글에서 제작한 connector가 존재
 
 ![bq_select.png](https://cdn.qwiklabs.com/39Vbx4yeiSCwKTWnt5qA2bG99Chp%2FWErqithsKc%2FFMA%3D)
 
-1. For Authorization, click **Authorize**. This allows Data Studio access to your Google Cloud project.
+3. 하단으로 이동하면 Partner Connector도 존재하며, 각종 3rd party에서 Data Studio와 연결을 지원하는 프로토콜도 존재함
+4. Google Connector를 사용하면, 구글 측으로부터 권한 승인을 요청받으며, 승인 후 편하게 데이터와의 연결 기능을 제공
 
 ### 2. Feature 추가하기
 
