@@ -22,14 +22,12 @@
 
 ### 2. Feature 추가하기
 
-1. Click **Add** in the bottom right corner and then click **Add to Report**.
-2. A preview of the available fields you can add to the report opens.
-3. Under Available Fileds, click on **ratio**, and drag it into the Dimention section.
-4. Click in the number icon to edit.
+1. 연결된 데이터 세트로부터 필요한 feature를 추출하는 방법 또한 GUI를 통해 손쉽게 해결 가능
+2. 가장 우측 탭을 보면 데이터 세트의 feature들이 나열되어 있음을 확인할 수 있음
+3. `ratio` feature를 예를 들면, 단순이 해당 feture를 우측으로부터 끌고와서 **Dimension** 탭에 추가할 수 있음
+4. `ratio` 옆의 숫자 아이콘을 클릭하면 데이터 타입 또한 수정 가능
 
 ![add_ratio_edit.png](https://cdn.qwiklabs.com/zXu1x6M710mF6jfejnn2JRgapcP0Gk61hUx05Uk9bZ4%3D)
-
-1. Scroll down to the Type area, and use the dropdown menu to select **Numeric** > **Percent**.
 
 ###  3. 데이터 테이블 만들기
 
