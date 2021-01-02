@@ -31,7 +31,7 @@
 
 ###  3. 데이터 테이블 만들기
 
-1. From the menu bar, select **Insert** > **Table**. Click onto the report to drop your table. Feel free to adjust the size of this table and the width of the columns.
+1. Default로 제공되는 시각화 외에 메뉴에서 **Insert** > **Table**을 클릭해서 데이터 테이블도 만들수 있음
 2. In the new Data and Style panel that opens, specify the following in the **Data** tab:
 
 - If **productSKU** is not present in the **Dimension** section, click **productSKU** from the **Available Fields** section and drag it to the **Add dimension** field.
