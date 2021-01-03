@@ -32,23 +32,7 @@
 ###  3. 데이터 테이블 만들기
 
 1. Default로 제공되는 시각화 외에 메뉴에서 **Insert** > **Table**을 클릭해서 데이터 테이블도 만들수 있음
-2. In the new Data and Style panel that opens, specify the following in the **Data** tab:
-
-- If **productSKU** is not present in the **Dimension** section, click **productSKU** from the **Available Fields** section and drag it to the **Add dimension** field.
-- In the **Metric** section, if present, remove **Record Count** as a Metric by clicking **x**.
-- Add **stockLevel** to the Metric area.
-
-![record_count.png](https://cdn.qwiklabs.com/izl%2BZH3GB9MjUBBt%2BwXdUqxqhTvipixZgyLcU%2B4OyVI%3D)
-
-- Drag **ratio** to add it as a new Metric
-- Drag **restockingLeadTime** to add it as a new Metric
-- In the Sort filed, click on **Record Count** and choose **ratio** from the dropdown menu for the new Sort field.
-- Specify **Descending**.
-
-1. At the top of the panel, click the **Style** tab.
-2. Under **Table Header**, check **Wrap Text**.
-3. Manually adjust the widths of the table columns by hovering over the vertical border and click and dragging.
-4. Confirm your report looks visually similar to the report below:
+2. 이후로는 시각화 메뉴와 동일한 방법으로 feature를 추가 가능
 
 ![list1.png](https://cdn.qwiklabs.com/tCaE0P77TtbssYfg1FD9pY%2BmrKO5qrUKNFU3T9Flr2A%3D)
 
