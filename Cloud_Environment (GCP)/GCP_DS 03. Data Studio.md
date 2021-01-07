@@ -38,7 +38,7 @@
 
 ### 4. 필터 적용하기
 
-1. In the reporting tools tray, click the Filter [ ![528063fec112f455.png](https://cdn.qwiklabs.com/jyGvhcxndKDFmO54IN8oiL2guwOS22CHDrnp%2FLDozxo%3D)] icon.
+1. 필터 아이콘을 [ ![528063fec112f455.png](https://cdn.qwiklabs.com/jyGvhcxndKDFmO54IN8oiL2guwOS22CHDrnp%2FLDozxo%3D)] 클릭하여 파라미터를 세팅.
 2. Above your data table, **click and drag** to create a filter.
 3. In the data panel that opens, specify **name** as the Dimension and **total_ordered** as the Metric.
 4. In the upper-right, select the **View** button to preview your report. You should be presented with the following:
