@@ -39,5 +39,5 @@
 ### 4. 필터 적용하기
 
 1. 필터 아이콘을 [ ![528063fec112f455.png](https://cdn.qwiklabs.com/jyGvhcxndKDFmO54IN8oiL2guwOS22CHDrnp%2FLDozxo%3D)] 클릭하여 파라미터를 세팅.
-2. 그 외는 위와 같이 GUI를 활용하여 파라미터 및 변수 조정
+2. 그 외는 위와 같이 GUI를 활용하여 파라미터 및 변수를 조정
 ![list2.png](https://cdn.qwiklabs.com/4BSOwFoYYhCYkdCfahKVAipsSvF4TvCy86lXNTCXvAs%3D)
