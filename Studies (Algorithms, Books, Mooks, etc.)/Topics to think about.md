@@ -176,3 +176,4 @@
 - 비선형 모델은 식변형으로 변수들을 선형 결합화 시킬수 없는 모델로 $$y = \frac{\beta_1x}{\beta_2 +x}$$와 같거나, 아예 판별식을 다르게 가져가는 경우에 해당함
 - 참조: http://blog.naver.com/PostView.nhn?blogId=kh9342&logNo=221780884161
 
+last updated: Feb. 18 2021
