@@ -2,7 +2,3 @@
 > - Data Analysis using Python (and R, SQL, Clouds API)
 >
 > - Machine learning algorithms
-
-### [Sentence Embedding]()
-
-### [Excel VBA]()
