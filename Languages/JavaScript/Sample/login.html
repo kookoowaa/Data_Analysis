@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Log in Sample</title>
+</head>
+<body>
+<script type="text/javascript">
+	var ID = 'ADMIN'
+	var PASSWD = 'ADMIN'
+
+	var input_ID = prompt("Enter ID: ")
+	var input_PASS = prompt("Enter Password: ")
+
+	if(ID===input_ID && PASSWD === input_PASS) {
+		alert("Welcome "+ID)
+	} else if (ID===input_ID) {
+		alert("Please check the password")
+	} else {
+		alert("Please check the ID and password")
+	}
+
+
+</script>
+</body>
+</html>
