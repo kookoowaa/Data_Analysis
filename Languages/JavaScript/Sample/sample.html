@@ -5,12 +5,14 @@
 </head>
 <body>
 <script type="text/javascript">
-	var tmp_list = ['aaa', 'bbb', 'abc', 'def', 'ghi']
+	var grades = {'egoing': 10, 'k8805': 6, 'sorialgi': 80};
 
-	for (i=0; i<tmp_list.length; i++){
-
-		document.write(tmp_list[i].toUpperCase())
-		document.write("<br>")
+	for (key in grades){
+		document.write("<li>key: ")
+		document.write(key)
+		document.write(" value: ")
+		document.write(grades[key])
+		document.write("</li>")
 	}
 
 
