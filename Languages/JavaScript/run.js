@@ -1,23 +1,9 @@
-function factory_movie(title){
-    return {
-        get_title: function(){
-            return title;
-        },
-        set_title: function(_title){
-            title = _title
-        }
-    }
+var arr = new Array('seoul','new york','ladarkh','pusan', 'Tsukuba');
+
+function getRandomValueFromArray(arr){
+    var index = Math.floor(Math.random()*arr.length);
+    result = arr[index]
+    return result
 }
 
-ghost = factory_movie('Ghost in the shell');
-matrix = factory_movie('Matrix');
-
-console.log(ghost.get_title())
-// Ghost in the shell
-
-ghost.set_title('공각기동대')
-
-console.log(ghost.get_title())
-// 공각기동대
-console.log(matrix.get_title())
-// Matrix
+console.log(getRandomValueFromArray(arr));
