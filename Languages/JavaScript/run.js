@@ -1,9 +1,5 @@
-var arr = new Array('seoul','new york','ladarkh','pusan', 'Tsukuba');
+var tmp_name = 'pablo';
 
-function getRandomValueFromArray(arr){
-    var index = Math.floor(Math.random()*arr.length);
-    result = arr[index]
-    return result
-}
+var tmp_string = `my name is ${tmp_name}`;
 
-console.log(getRandomValueFromArray(arr));
+console.log(tmp_string)
