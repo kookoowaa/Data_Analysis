@@ -1,2 +1,6 @@
 *checkpoint.ipynb
 *.pyc
+.vscode/launch.json
+run.js
+.gitignore
+Languages/JavaScript/run.js
