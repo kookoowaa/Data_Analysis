@@ -1,9 +1,8 @@
 var http = require('http');
 var fs = require('fs');
-var url = require('url');
  
-var app = http.createServer(function(request,response){
-    let _url = `${request.headers.host}${request.url}`;
+var app = http.createServer(  function(request,response){
+    let _url = `${__dirname}${request.url}`;
     let objUrl = new URL(_url);
     let _id = objUrl.searchParams.get('id');
 
@@ -13,7 +12,7 @@ var app = http.createServer(function(request,response){
     if(request.url == '/favicon.ico'){
       return response.writeHead(404);
     }
-    response.writeHead(200);
+    //response.writeHead(200);
     fs.readFile(`d:/Git/Data_Analysis/Languages/node.js/web1_html/data/${_id}`, 'utf8', function(err,data){
 
       var template = `
