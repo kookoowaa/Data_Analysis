@@ -13,7 +13,7 @@ var app = http.createServer(  function(request,response){
       return response.writeHead(404);
     }
     //response.writeHead(200);
-    fs.readFile(`d:/Git/Data_Analysis/Languages/node.js/web1_html/data/${_id}`, 'utf8', function(err,data){
+    fs.readFile(`${__dirname}/data/${_id}`, 'utf8', function(err,data){
 
       var template = `
       <!doctype html>
