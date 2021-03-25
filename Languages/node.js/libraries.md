@@ -35,8 +35,19 @@
     ```javascript
     var fs = require('fs');
 
-    fs.readFile(<파일경로>, 'utf8', function(err, data){
-        console.log(data)
+    fs.readFile(<파일경로>, 'utf8', function(err, _fdata){
+        console.log(_fdata)
     })
     ```
 - 중간의 'utf8'은 옵션으로, 생략할 시 컴퓨터언어로 값을 반환
+
+### `fs.readdir()`
+- `.readdir()`은 특정 디렉토리의 파일 리스트를 반환해 줌
+- 사용 방법은 다음과 같음:
+  ```javascript
+  const fs = require('fs');
+ 
+  fs.readdir(<파일경로>, function(err,_flist){
+    console.log(_flist)
+  });
+  ```
