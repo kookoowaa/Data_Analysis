@@ -64,6 +64,7 @@ var app = http.createServer(  function(request,response){
     return _subtitle
   }
 
+
   
   var _tester = /web1_html\/$/;
   if (_tester.test(_path)){
@@ -74,7 +75,14 @@ var app = http.createServer(  function(request,response){
 
       // request에서 요청받은 `id` 이름의 파일에서 contents 읽어오기
       fs.readFile(`${_path}/data/${_id}`, 'utf8', function(err,data){
-        var _template = templateHTML(_id, _subtitle, `<a href="/update/?id=${_id}">Update</a> <h2>${_id}</h2>${data}`);
+        var _template = templateHTML(_id, _subtitle, 
+          `<a href="/update/?id=${_id}">Update</a>
+          <form action="delete_process" method="post">
+            <input type="hidden" name="id" value="${_id}">
+            <input type="submit" value="delete">
+          </form>
+          <h2>${_id}</h2>${data}`
+          );
         response.end(_template);
       });
     });
@@ -102,7 +110,7 @@ var app = http.createServer(  function(request,response){
       </form>
       `);
         
-        response.end(_template);
+      response.end(_template);
       })
     })
 
@@ -131,7 +139,6 @@ var app = http.createServer(  function(request,response){
   
 
   } else if (request.url === `/update/?id=${_id}`) {
-
     fs.readdir(`${__dirname}/data`, function(err,_flist){
       fs.readFile(`${__dirname}/data/${_id}`, 'utf8', function(err,data){
         var _template = templateHTML('Web - Update', templateList(_flist), `
@@ -150,6 +157,24 @@ var app = http.createServer(  function(request,response){
       `);
       response.end(_template);
       });
+    });
+
+
+  } else if (request.url === `/delete_process`) {
+    var body = ''
+
+    request.on('data', function(data){
+      body = body + data;
+      console.log(body)
+    });
+
+    request.on('end', function(){
+      let post = qs.parse(body);
+      let id = post.id;
+      fs.unlink(`${__dirname}/data/${id}`, function(error){
+        response.writeHead(302, {Location: '/'});
+        response.end();
+      })
     });
 
   } else {
