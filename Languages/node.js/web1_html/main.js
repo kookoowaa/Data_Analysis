@@ -1,5 +1,6 @@
 var http = require('http');
 var fs = require('fs');
+var qs = require('querystring');
  
 var app = http.createServer(  function(request,response){
   let _url = `${__dirname}${request.url}`;
@@ -9,7 +10,9 @@ var app = http.createServer(  function(request,response){
   //   href: 'c:\\Users\\chpar10\\3D Objects\\Data_Analysis\\Languages\\node.js\\web1_html/?id=HTML',
   //   origin: 'null',
   //   protocol: 'c:',
-  //   username: '',
+  //   username: '',request.on('data', fuction(data){
+      
+    
   //   password: '',
   //   host: '',
   //   hostname: '',
@@ -43,6 +46,7 @@ var app = http.createServer(  function(request,response){
       <ul>
         ${list}
       </ul>
+      <a href='/create'>Create</a>
       ${body}
     </body>
     </html>
@@ -70,12 +74,89 @@ var app = http.createServer(  function(request,response){
 
       // request에서 요청받은 `id` 이름의 파일에서 contents 읽어오기
       fs.readFile(`${_path}/data/${_id}`, 'utf8', function(err,data){
-        var _template = templateHTML(_id, _subtitle, `<h2>${_id}</h2>${data}`);
-        
+        var _template = templateHTML(_id, _subtitle, `<a href="/update/?id=${_id}">Update</a> <h2>${_id}</h2>${data}`);
         response.end(_template);
       });
     });
-  };
+
+
+  } else if (request.url==='/create') {
+    // 데이터 생성용 웹페이지 추가
+    
+    fs.readdir(`${__dirname}/data`, function(err,_flist){
+      var _subtitle = templateList(_flist)
+
+      fs.readFile(`${__dirname}/data/web`, 'utf8', function(err,data){
+        // Header를 "Web - create"로 수정하고, 글 목록은 유지
+        // 그 외 아래 body에 내용 추가를 위한 <form> ui를 추가
+        // <form>은 "Post" 방식으로 process_create에 데이터를 전달
+        var _template = templateHTML('Web - create', _subtitle, `
+        <form action="http://localhost:3000/process_create" method="post">
+        <p><input type="text" name="title" placeholder="title"></p>
+        <p>
+          <textarea name="description" placeholder="description"></textarea>
+        </p>
+        <p>
+          <input type="submit">
+        </p>
+      </form>
+      `);
+        
+        response.end(_template);
+      })
+    })
+
+
+  } else if (request.url ==='/process_create') {
+    // /process_create로 데이터가 전달되어 왔을 때 처리
+    // 전달되어온 데이터를 string으로 받은 후에 parse 처리
+    // parse된 데이터로 신규 파일을 생성
+
+    // var qs = require('querystring');
+    var body = ''
+
+    request.on('data', function(data){
+      body = body + data;
+    });
+
+    request.on('end', function(){
+      let post = qs.parse(body);
+      let title = post.title;
+      let desc = post.description
+      fs.writeFile(`${__dirname}/data/${title}`, desc, 'utf8', function(err){
+        response.writeHead(302, {Location: `/?id=${title}`});
+        response.end()
+      })
+    });
+  
+
+  } else if (request.url === `/update/?id=${_id}`) {
+
+    fs.readdir(`${__dirname}/data`, function(err,_flist){
+      fs.readFile(`${__dirname}/data/${_id}`, 'utf8', function(err,data){
+        var _template = templateHTML('Web - Update', templateList(_flist), `
+
+        <form action="http://localhost:3000/process_create" method="post">
+        <p>Update <b>${_id}</b></p>
+        <input type="hidden" name="title" value=${_id}>
+        <p>Description</p>
+        <p>
+          <textarea name="description">${data}</textarea>
+        </p>
+        <p>
+          <input type="submit">
+        </p>
+      </form>
+      `);
+      response.end(_template);
+      });
+    });
+
+  } else {
+    response.writeHead(404);
+    response.end('Not found')
+  }
+  ;
 
 });
 app.listen(3000);
