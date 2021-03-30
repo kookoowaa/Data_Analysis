@@ -33,7 +33,8 @@ var app = http.createServer(  function(request,response){
   }
   
   // html 구성요소들에 대한 함수 정의
-  var templateHTML = function(title, list, body){
+  var template = {
+    html: function(title, list, body){
     return `
     <!doctype html>
     <html>
@@ -51,18 +52,19 @@ var app = http.createServer(  function(request,response){
     </body>
     </html>
     `;
-  }
+    },
 
-  var templateList = function(fileList){
-    let _tester = /[A-z]+\./   // 확장자 있는 파일 제외, data 폴더의 파일 리스트 반환
-    let _subtitle = ''
-    for(i=0;i<fileList.length;i++){
-      if((!_tester.test(fileList[i])) && (fileList[i]!='Web')){
-        _subtitle = _subtitle+ `<li><a href="/?id=${fileList[i]}">${fileList[i]}</a></li>` + '\n'
+    list: function(fileList){
+      let _tester = /[A-z]+\./   // 확장자 있는 파일 제외, data 폴더의 파일 리스트 반환
+      let _subtitle = ''
+      for(i=0;i<fileList.length;i++){
+        if((!_tester.test(fileList[i])) && (fileList[i]!='Web')){
+          _subtitle = _subtitle+ `<li><a href="/?id=${fileList[i]}">${fileList[i]}</a></li>` + '\n'
+        }
       }
+      return _subtitle
     }
-    return _subtitle
-  }
+}
 
 
   
@@ -71,11 +73,11 @@ var app = http.createServer(  function(request,response){
     // 동적 subtitle 할당을 위해 중복으로 fs 사용
     // global 변수 변경을 어떻게 할지 고민해 보아야 할 듯
     fs.readdir(`${_path}/data`, function(err,_flist){
-      var _subtitle = templateList(_flist)
+      var _subtitle = template.list(_flist)
 
       // request에서 요청받은 `id` 이름의 파일에서 contents 읽어오기
       fs.readFile(`${_path}/data/${_id}`, 'utf8', function(err,data){
-        var _template = templateHTML(_id, _subtitle, 
+        var _template = template.html(_id, _subtitle, 
           `<a href="/update/?id=${_id}">Update</a>
           <form action="delete_process" method="post">
             <input type="hidden" name="id" value="${_id}">
@@ -92,13 +94,13 @@ var app = http.createServer(  function(request,response){
     // 데이터 생성용 웹페이지 추가
     
     fs.readdir(`${__dirname}/data`, function(err,_flist){
-      var _subtitle = templateList(_flist)
+      var _subtitle = template.list(_flist)
 
       fs.readFile(`${__dirname}/data/web`, 'utf8', function(err,data){
         // Header를 "Web - create"로 수정하고, 글 목록은 유지
         // 그 외 아래 body에 내용 추가를 위한 <form> ui를 추가
         // <form>은 "Post" 방식으로 process_create에 데이터를 전달
-        var _template = templateHTML('Web - create', _subtitle, `
+        var _template = template.html('Web - create', _subtitle, `
         <form action="http://localhost:3000/process_create" method="post">
         <p><input type="text" name="title" placeholder="title"></p>
         <p>
@@ -141,7 +143,7 @@ var app = http.createServer(  function(request,response){
   } else if (request.url === `/update/?id=${_id}`) {
     fs.readdir(`${__dirname}/data`, function(err,_flist){
       fs.readFile(`${__dirname}/data/${_id}`, 'utf8', function(err,data){
-        var _template = templateHTML('Web - Update', templateList(_flist), `
+        var _template = template.html('Web - Update', template.list(_flist), `
 
         <form action="http://localhost:3000/process_create" method="post">
         <p>Update <b>${_id}</b></p>
@@ -177,6 +179,7 @@ var app = http.createServer(  function(request,response){
       })
     });
 
+    
   } else {
     response.writeHead(404);
     response.end('Not found')
