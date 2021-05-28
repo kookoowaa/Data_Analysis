@@ -4,6 +4,8 @@
 - ARIMA는 Moving average를 error에 적용
 - 딥러닝에서는 LSTM, RNN을 활용
 
+https://diane-space.tistory.com/331
+
 https://dong-guri.tistory.com/9
 
 http://cs229.stanford.edu/proj2015/219_report.pdf
