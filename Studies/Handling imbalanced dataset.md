@@ -52,8 +52,6 @@ C4.5, C5.0, CART and Random Forest 등 다양하게 사용해보는 것을 추�
 
 
 
-
-
 SMOTE(synthetic minority oversampling technique)
 
 데이터의 개수가 적은 클래스의 표본을 가져온 뒤 임의의 값을 추가하여 새로운 샘플을 만들어 데이터에 추가하는 오버샘플링 방식
@@ -61,4 +59,3 @@ SMOTE(synthetic minority oversampling technique)
  lightgbm 같은 경우는 “**scale_pos_weight**”과 “**is_unbalance**”의 파라미터 튜닝을 통해 어느 정도 성능을 높일 수 있으나 해당 데이터 셋으로 테스트 해본 결과 **SMOTE**를 통해 오버 샘플링한 모델의 성능이 가장 좋은 것을 확인할 수 있었다.
 
 https://john-analyst.medium.com/smote%EB%A1%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%88%EA%B7%A0%ED%98%95-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0-5ab674ef0b32
-
