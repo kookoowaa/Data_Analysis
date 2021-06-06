@@ -1,3 +1,11 @@
+> - 우선 모델(분류)에 대한 고민을 선행해 볼 것
+>   tree 기반 모델은 imbalanced dataset에 좋은 성능을 내는 것으로 알려져 있음
+> - SMOTE 기법을 활용해서 오버 샘플링 하는 것이 가장 무난
+> - 오버샘플링은 training set에 국한시키고, test/validation set은 원본 데이터를 사용
+> - 결과적으로 우리가 모르는 모집단을 정확하게 반영하는 과정이다보니, 샘플링을 통해 모집단으로 추정되는 test set으로 시뮬레이션 돌리는 과정임
+
+
+
 ## Advantage and disadvantages of Under-sampling
 
 ### **Advantages**
