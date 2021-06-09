@@ -4,7 +4,9 @@
 > - 오버샘플링은 training set에 국한시키고, test/validation set은 원본 데이터를 사용
 > - 결과적으로 딥러닝을 활용한 분석이란 우리가 모르는 모집단을 추정해 나아가는 과정인 만큼, 샘플링을 통해 여러 차례 시뮬레이션 돌리더라도 모집단으로 추정되는 test_set에 좋은 성능을 나타내는 모델을 채택하는 것이 합리적
 
+SMOTE
 
+![](https://miro.medium.com/max/2760/0*DfTZFQO5nhdiYmiY.png)
 
 ## Advantage and disadvantages of Under-sampling
 
