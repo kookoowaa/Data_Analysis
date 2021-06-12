@@ -1,3 +1,4 @@
+> - undersampling의 경우 oversampling이 더 적합
 > - 우선 모델(분류)에 대한 고민을 선행해 볼 것
 >   tree 기반 모델은 imbalanced dataset에 좋은 성능을 내는 것으로 알려져 있음
 > -  **SMOTE(Synthetic Minority Over-sampling Technique)** 기법을 활용해서 부족한 클래스의 모조 샘플을 만들어내는 방식이 가장 인기있는 오버샘플링 기법
