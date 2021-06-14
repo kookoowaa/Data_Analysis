@@ -1,4 +1,4 @@
-> - undersampling의 경우 모델을 빌딩하는데 유리하지만 성능이 떨어지는 편이며, oversampling이 더 적합
+> - undersampling의 경우 모델을 빌딩하는데 유리하지만 성능이 떨어지는 편이며, oversampling은 overfitting의 위험이 있긴 하지만 더 적합하다고 알려져 있음
 > - 우선 모델(분류)에 대한 고민을 선행해 볼 것
 >   tree 기반 모델은 imbalanced dataset에 좋은 성능을 내는 것으로 알려져 있음
 > -  **SMOTE(Synthetic Minority Over-sampling Technique)** 기법을 활용해서 부족한 클래스의 모조 샘플을 만들어내는 방식이 가장 인기있는 오버샘플링 기법
@@ -9,29 +9,7 @@ SMOTE
 
 ![](https://miro.medium.com/max/2760/0*DfTZFQO5nhdiYmiY.png)
 
-## Advantage and disadvantages of Under-sampling
 
-### **Advantages**
-
-- It can help improve run time and storage problems by reducing the number of training data samples when the training data set is huge.
-
-### **Disadvantages**
-
-- It can discard potentially useful information which could be important for building rule classifiers.
-- The sample chosen by random under-sampling may be a biased sample. And it will not be an accurate representation of the population. Thereby, resulting in inaccurate results with the actual test data set.
-
-## Advantages and Disadvantage of over-sampling
-
-### **Advantages**
-
-- Unlike under-sampling, this method leads to no information loss.
-- Outperforms under sampling
-
-### **Disadvantages**
-
-- It increases the likelihood of overfitting since it replicates the minority class events.
-
-https://www.analyticsvidhya.com/blog/2020/07/10-techniques-to-deal-with-class-imbalance-in-machine-learning/
 
 
 
