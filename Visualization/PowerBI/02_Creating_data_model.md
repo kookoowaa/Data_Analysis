@@ -1,11 +1,11 @@
 # Data Modeling
 
-> 1. Build normalized tables from the start
-> 2. Organize lookup tables
-> 3. Avoid two-way filtering
-> 4. Hide fields that are foreign keys (not to be used in filter context)
+> 1. **Build normalized tables from the start**
+> 2. **Organize lookup tables**
+> 3. **Avoid two-way filtering**
+> 4. **Hide fields that are foreign keys (not to be used in filter context)**
 
-
+___
 
 ## Data Normalization
 
