@@ -59,3 +59,50 @@ It is advised to relocate calculated columns or measures according to the right 
 - `RELATED()` returns related values in each row of a table based on relationship with other tables, almost like `vlookup()` **(ITERATION!)**
 - `RELATED()` itself is best not to use, but the iteration concept is introduced hereby, and is useful in other functions like `FILTER()` or `SUMX()`
 
+## CALCULATE()
+
+- `CALCULATE()` evaluates expression under set of filters (Like calculate if.....):
+
+  ```dax
+   = CALCULATE( {Expression}, [FILTER 1], [FILTER 2], ...)
+  ```
+  
+- Hereby, the filters are to be kept simple, fixed values based on columns; Not filtering based on measures
+- Also, it **OVERWRITES filter context**, if there is any conflict (i.e. overwriting row filter context)
+
+## ALL()
+
+- `ALL()` returns table, or a subset of table, removing any filter context applied
+
+  ```dax
+   = ALL( {Table of Column}, [Column 1 to remove filters on(optional)], [Column 2], [Column 3], ...)
+  ```
+- It is not often used by itself, but more frequently when unfiltered fixed values are needed as a parameter of another calculation (i.e. denominator of %)
+
+## FILTER()
+
+- `FILTER()` returns a subset of table after filter:
+
+  ```dax
+   = FILTER( {Table}, {Filter expression})
+  ```
+  
+- Major difference from using `CALCULATE()` filter is that 1) it **accepts measure**, and 2) it **iterates** table and returns subset
+- Although powerful, since it iterates (slow), it is better to use `CALCULATE()` if possible
+
+## Iterator ("X") functions
+
+- There are functions ending with **"X"** in specific (i.e. `SUMX()`, `COUNTX()`)
+- These functions loop through each row of table, whether filtered, and returns aggregation based on expression:
+
+  ```dax
+   = {AGGREGATION}X( {Table}, {Expression})
+   =SUMX(
+         FILTER(Sales, RELATED(Product[Category]) = "Fruit"),
+         Sales[Price] * Sales[Quantity]
+         )
+  ```
+- This is powerful as it removed unecessary calculated columns from even creating, and allows complex calculation to be carried out in a simple code
+
+## Time intelligence
+
