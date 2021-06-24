@@ -106,3 +106,44 @@ It is advised to relocate calculated columns or measures according to the right 
 
 ## Time intelligence
 
+- DAX provides various time intelligence formulas such as:
+
+  > Performance to-date
+  >
+  > - Use `DATESYTD()`
+  >
+  > ```dax
+  > = CALCULATE( {Measure}, DATESYTD( {Calendar[Date]} ))
+  > // DATESYTD replacable with DATESQTD, DATESMTD, etc.
+  > ```
+
+  > Previous Period
+  >
+  > - Use `DATEADD()`
+  >
+  > ```DAX
+  > = CALCULATE( {Measure}, 
+  >             DATEADD( {Calendar[Date]},
+  >                      {interval such as -1},
+  >                      {period such as MONTH}
+  >                     )
+  >         	)
+  > // period replacable with DAY, QUARTER, YEAR, etc.
+  > ```
+
+  > Moving average//Running Total
+  >
+  > - use `DATESINPERIOD()`
+  >
+  > ```DAX
+  > = CALCULATE( {Measure}, 
+  >             DATESINPERIOD( {Calendar[Date]},
+  >                            MAX( {Calendar[Date]} ),
+  >                            {interval such as -10},
+  >                            {period such as DAY}
+  >                           )
+  >         	)
+  > ```
+
+  
+
