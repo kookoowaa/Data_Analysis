@@ -104,7 +104,7 @@ It is advised to relocate calculated columns or measures according to the right 
   ```
 - This is powerful as it removed unecessary calculated columns from even creating, and allows complex calculation to be carried out in a simple code
 
-## Time intelligence
+## Time Intelligence
 
 - DAX provides various time intelligence formulas such as:
 
