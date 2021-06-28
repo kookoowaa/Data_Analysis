@@ -1,9 +1,9 @@
 # DAX
 
-> 1. Build normalized tables from the start
-> 2. Organize lookup tables
-> 3. Avoid two-way filtering
-> 4. Hide fields that are foreign keys (not to be used in filter context)
+> 1. Do not use calculated column when a measure will do the trick
+> 2. Use measure for even the simplest calculation, break them down into simple component part (as in variable)
+> 3. Reference columns with table names, but measure alone (readable)
+> 4. Minimize iterator functions!
 
 
 
