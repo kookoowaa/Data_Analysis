@@ -1,9 +1,6 @@
 # Visualizing
 
-> 1. Do not use calculated column when a measure will do the trick
-> 2. Use measure for even the simplest calculation, break them down into simple component part (as in variable)
-> 3. Reference columns with table names, but measure alone (readable)
-> 4. Minimize iterator functions!
+> 1. Do not use calculated column w
 
 
 
