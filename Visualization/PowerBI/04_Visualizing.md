@@ -1,6 +1,8 @@
 # Visualizing
 
-> 1. Do not use calculated column w
+> 1. Go for clarity & simplicity
+> 2. Create narrative with context:
+>    So what are you trying to communicate?
 
 
 
