@@ -5,7 +5,6 @@
 >    So what are you trying to communicate?
 
 
-
 ## Filtering options
 
 - There are four types of filter: Report level, Page level, visual level, and drill-through
