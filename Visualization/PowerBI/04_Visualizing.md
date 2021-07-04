@@ -14,7 +14,7 @@
   (This can be selected on the same scope on other pages)
   It is more like page-level filter applying from other pages.
 
-## Cards
+## Cards/KPIs
 
 - For KPIs, insert measure into **indicator** to track record of business index
 - Adding datetime in **trend axis** would add area graph beneath the card
