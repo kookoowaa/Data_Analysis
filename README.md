@@ -3,3 +3,4 @@
 >
 > - Machine learning algorithms
 > - languages for data analysis
+> - visualization and business intelligence
