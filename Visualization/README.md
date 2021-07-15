@@ -6,3 +6,5 @@ Mostly on data visualization using D3.js.
 
 ___
 For sample D3 visualization, referece to [D3.js Gallery](http://christopheviau.com/d3list/gallery.html) with more than 2,000 samples.
+
+Also visualization using updated Plotly (open sourced!)
