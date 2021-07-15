@@ -73,7 +73,11 @@ You can use "M Code" from the **Formula Bar** of Query Editor to carry out ETL i
   NOTE3 - Concatenate function is also available under name Append
                  (This is useful for the time series dataset sharing same structure: USER "Folder Option!")
 
+### 6. Combine data
 
+- Data table can be combined either vertically (append), or horizontally (merge)
+- In order to combine data vertically, both table needs to contain same features (or columns)
+  If not, it can be manually adjusted via query editor
 
 ___
 
