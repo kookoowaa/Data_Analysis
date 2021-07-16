@@ -1,4 +1,4 @@
-Rolling Calendar with M CODE
+## Rolling Calendar with M CODE
 
 1. Create a new, blank query
 
@@ -15,4 +15,14 @@ Rolling Calendar with M CODE
    ```
 
 4. Convert List to Table and format date
+
+## Rolling Calendar with DAX
+
+```dax
+Table = CALENDAR(date(2020,09,01),TODAY())
+```
+
+
+
+
 
