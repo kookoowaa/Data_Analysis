@@ -18,6 +18,9 @@
 
 ## Rolling Calendar with DAX
 
+- More simple way to make one is via DAX `CALENDAR()` function
+- `CALENDAR()` creates column immediately
+
 ```dax
 Table = CALENDAR(date(2020,09,01),TODAY())
 ```
