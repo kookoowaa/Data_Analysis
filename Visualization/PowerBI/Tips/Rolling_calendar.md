@@ -20,11 +20,22 @@
 
 - More simple way to make one is via DAX `CALENDAR()` function, which creates column(table) immediately
 
-```dax
-Table = CALENDAR(date(2020,09,01),TODAY())
-```
+  ```dax
+  Table = CALENDAR(date(2020,09,01),TODAY())
+  ```
 
+- If to make table with date as a single column (where `CALENDAR()` generates default column called [Date]):
 
+  ```dax
+  Table = ADDCOLUMNS(
+  			CALENDAR(date(2020,09,01),TODAY()),
+  			"Month", Month([Date]),
+  			"Week", Week([Date]),
+  			...
+  		)
+  ```
+  
+  
 
 
 
