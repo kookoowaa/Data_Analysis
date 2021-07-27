@@ -4,7 +4,7 @@
 
 > Pre-requisite
 >
-> - Given that there is a date table `A` , a copy of it `AA` should be created with inactive relationship
+> - Given that there is a date table `A`, a copy of it `AA` should be created with inactive relationship
 >
 > - For the purpose of data in period **t-n**, field should be applied from table `AA`
 
@@ -22,7 +22,7 @@
 >             	  -70,
 > 	         DAY
 >     	  )
-> 	
+>
 > 	var result = 
 >     	calculate(
 >     	      [Sales],
@@ -30,18 +30,20 @@
 >                 	KEEPFILTERS(previousDate),
 >                 	USERELATIONSHIP(A[Date], AA[Date])
 >         	)
-> 	
+>
 > 	return result
 > 	```
-> 	
+>
 > - Logic:
 >
 >    ```dax
 >    var ReferenceDate = max(A[Date])
->    
->    // Retrieve selected slicer value ('Calendar'[Date]) and assign variable
 >    ```
+>    
+>    -  Retrieve selected slicer value ('Calendar'[Date]) and assign variable
 >
+>    
+>    
 >    ```dax
 >    var previousDate = 
 >        DATESINPERIOD(
@@ -50,10 +52,12 @@
 >          	  -70,
 >             DAY
 >      	  )
->      	  
->    // Create new filter from the reference table AA, for 10 weeks (-70 days)
 >    ```
 >
+>    - Create new filter from the reference table AA, for 10 weeks (-70 days)
+>    
+>    
+>    
 >    ```dax
 >    var result = 
 >    	calculate(
@@ -62,7 +66,7 @@
 >            	KEEPFILTERS(previousDate),
 >            	USERELATIONSHIP(A[Date], AA[Date])
 >        	)
->    
->    // Calculate, removing filters from A, and applying new filter from AA, using inactive relationship
 >    ```
+>    
+>    - Calculate, removing filters from A, and applying new filter from AA, using inactive relationship
 
