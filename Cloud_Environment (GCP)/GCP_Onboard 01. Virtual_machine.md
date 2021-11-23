@@ -1,5 +1,7 @@
 ## VM 인스턴스 만들기
 
+*last updated on 23rd Nov.*
+
 - VM 인스턴스는 GCP 콘솔에서, 혹은 command-line interface를 통해서 만들 수 있음
 - 우선 GCP 콘솔에서 만드는 방법은, `메뉴 > Compute Engine > VM 인스턴스`에서 생성 가능
 - 실행 시 설정할 수 있는 파라미터는 이름, 리전 및 영역, CPU와 RAM, 부팅디스크, 방화벽 등이 있음
