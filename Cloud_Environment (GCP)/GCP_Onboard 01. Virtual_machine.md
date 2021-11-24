@@ -1,6 +1,5 @@
 ## VM 인스턴스 만들기
 
-*last updated on 23rd Nov.*
 
 - VM 인스턴스는 GCP 콘솔에서, 혹은 command-line interface를 통해서 만들 수 있음
 - 우선 GCP 콘솔에서 만드는 방법은, `메뉴 > Compute Engine > VM 인스턴스`에서 생성 가능
