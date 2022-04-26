@@ -12,7 +12,3 @@
 3. Bigquery connector on Python
 
   > https://sophiamyang.github.io/DS/dataaccess/bigquery/bigquery.html
-
-4. Dataclass on Python
-
-> https://www.youtube.com/c/ArjanCodes
