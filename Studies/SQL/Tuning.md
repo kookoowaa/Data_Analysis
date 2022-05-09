@@ -16,5 +16,7 @@
 - 위의 케이스와 유사한 형태로, (0,1) flag가 심어져 있는 컬럼의 데이터 타입이 string인 경우, `where flag=1` 형태로 조건문 설정 시 전체 데이터를 풀스캔함
 - 이는 DBMS에서 내부의 묵시적 형변환이 이루어 지는 경우로, `where flag='1'` 형태로 쿼리를 튜닝
 
+## 4.
+
 https://hahyuning.tistory.com/67
 https://taewooblog.tistory.com/m/63
