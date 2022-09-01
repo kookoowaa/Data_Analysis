@@ -7,6 +7,7 @@
 
 # LSTM 활용 시계열 예측
 
+https://shyu0522.tistory.com/18
 - 통번역, 언어 인지 등에 효과적인 LSTM 모델은 시계열에서도 매우 효과적
 - ARIMA 모델과는 다르게 변수 설정이 가능 (https://andaconda.tistory.com/13)
 - https://hhhh88.tistory.com/38
