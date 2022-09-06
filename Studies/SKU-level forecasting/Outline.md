@@ -12,3 +12,8 @@ https://shyu0522.tistory.com/18
 - ARIMA 모델과는 다르게 변수 설정이 가능 (https://andaconda.tistory.com/13)
 - https://hhhh88.tistory.com/38
 - https://put-idea.tistory.com/44
+
+# xgboost 활용 사례
+
+https://towardsdatascience.com/machine-learning-for-store-demand-forecasting-and-inventory-optimization-part-1-xgboost-vs-9952d8303b48
+
