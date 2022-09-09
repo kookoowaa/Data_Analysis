@@ -17,3 +17,4 @@ https://shyu0522.tistory.com/18
 
 https://towardsdatascience.com/machine-learning-for-store-demand-forecasting-and-inventory-optimization-part-1-xgboost-vs-9952d8303b48
 
+- LY 트렌드도 변수화, D-7, D-21등 지표는 delta로 
