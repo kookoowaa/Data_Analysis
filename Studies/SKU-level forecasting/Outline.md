@@ -17,4 +17,6 @@ https://shyu0522.tistory.com/18
 
 https://towardsdatascience.com/machine-learning-for-store-demand-forecasting-and-inventory-optimization-part-1-xgboost-vs-9952d8303b48
 
-- LY 트렌드도 변수화, D-7, D-21등 지표는 delta로 
+- LY 트렌드도 변수화 : 전년 동기 7일 평균, 전년 동기 D+21 평균
+- D-7, D-14 : 평균 대신 실제값 (or 증감 %)
+- 구정/추석 연휴 변수화: 직전 1주 + 휴일
