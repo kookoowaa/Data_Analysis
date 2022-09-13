@@ -20,4 +20,4 @@ https://towardsdatascience.com/machine-learning-for-store-demand-forecasting-and
 - LY 트렌드도 변수화 : 전년 동기 7일 평균, 전년 동기 D+21 평균
 - D-7, D-14 : 평균 대신 실제값 (or 증감 %)
 - 구정/추석 연휴 변수화: 기본값 외
-
+- 연휴 마지막 날? (주말 포함)
