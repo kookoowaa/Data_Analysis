@@ -21,3 +21,5 @@ https://towardsdatascience.com/machine-learning-for-store-demand-forecasting-and
 - D-7, D-14 : 평균 대신 실제값 (or 증감 %)
 - 구정/추석 연휴 변수화: 기본값 외
 - 연휴 마지막 날? (주말 포함)
+
+-> outlier에 취약
