@@ -22,4 +22,4 @@ https://towardsdatascience.com/machine-learning-for-store-demand-forecasting-and
 - 구정/추석 연휴 변수화: 기본값 외
 - 연휴 마지막 날? (주말 포함)
 
--> outlier에 취약
+-> outlier에 취약 + autocorrelated
