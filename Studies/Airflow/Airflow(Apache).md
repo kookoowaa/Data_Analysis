@@ -1,5 +1,6 @@
-- AirBnB에서 만든 workflow management tool로 현재 아파치 재단에서 관리중
-- Jupyter와 같은 서버(기본 local) 형태로 동작하며, `pip install`을 통해 간단하게 설치 가능
+- AirBnB에서 만든 workflow orchestration tool로 현재 아파치 재단에서 관리중
+- Python 기반으로 설계되어 Jupyter와 같은 서버(기본 local) 형태로 동작하며, `pip install`을 통해 간단하게 설치 가능
+- Operator와 Dependency간의 관계로 구성
 
 reference.
 https://js333.tistory.com/12
