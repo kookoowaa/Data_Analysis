@@ -3,8 +3,6 @@
 - Operator와 Dependency간의 관계로 구성
 - 가장 대표적으로 ETL 과정을 파이프라인으로 구축하고, 주기적으로 실행에 옮길 수 있음
 
-
-
 reference.
 https://js333.tistory.com/12
 https://www.bearpooh.com/123
