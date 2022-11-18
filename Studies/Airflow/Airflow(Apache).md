@@ -2,6 +2,7 @@
 - Python 기반으로 설계되어 Jupyter와 같은 서버(기본 local) 형태로 동작하며, `pip install`을 통해 간단하게 설치 가능
 - Operator와 Dependency간의 관계로 구성
 - 가장 대표적으로 ETL 과정을 파이프라인으로 구축하고, 주기적으로 실행에 옮길 수 있음
+- 현 직장에서는 Python으로 만든 DAG를 git에 push하여 동작하도록 시스템이 설계되어 있음
 
 reference.
 https://js333.tistory.com/12
