@@ -6,14 +6,14 @@
 
 - 이 같은 분석 기법은, 목표 대비 미달/초과 원인을 분석하는데에도 용이할 뿐 아니라, YoY, QoQ 등 기간에 걸쳐 일어나는 변화를 추적하기에도 용이함
 
-
-
-
+- 
 
 ## CTC 구성
 
 - %에 대한 CTC의 구성은 다음과 같이 CTC Mix와 CTC rate impact로 나눠서 볼 수 있음
   $\%variance = \sum_i^n CTC_i = \sum_i^n CTC\_Mix_i + \sum_i^nCTC\_Rate_i$
+
+
 
 - 이 중 $CTC\_Mix$는 1) 구성 내 %편차를 고정으로 두고 **2) 구성비의 변화가 미치는 영향도**를 분석해주게 됨
 
@@ -28,8 +28,8 @@
   > $Comparison\_Share_i = Comparison\_Revenue_i / \sum_i^n Comparison\_Revenue_i$
   > 
   > $Baseline\_Share_i = Baseline\_Revenue_i / \sum_i^n Baseline\_Revenue_i$
-  > 
-  > 
+
+
 
 - $CTC\_Rate$의 경우는 1) 구성비를 고정으로 두고 **2) %의 변화가 미치는 영향도**를 분석
 
@@ -42,20 +42,6 @@
   > $Comparison\_Share_i = Comparison\_Revenue\_i / \sum_i^n Comparison\_Revenue_i$
   > 
   > $delta\_in\_\%_i = Comparion\_Margin_i - Baseline\_Margin_i$
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
